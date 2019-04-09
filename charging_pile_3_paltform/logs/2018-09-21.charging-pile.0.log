@@ -1,0 +1,883 @@
+2018-09-21 15:39:26.049 [main] INFO  com.company.project.Application - Starting Application on KPTEK with PID 19308 (started by KPTEK in E:\liDes\Java\idealWorkPlace\common\充电桩\平台对接接口\charging_pile_3_paltform)
+2018-09-21 15:39:26.051 [main] DEBUG com.company.project.Application - Running with Spring Boot v1.5.7.RELEASE, Spring v4.3.11.RELEASE
+2018-09-21 15:39:26.051 [main] INFO  com.company.project.Application - The following profiles are active: test
+2018-09-21 15:39:26.117 [main] INFO  o.s.b.c.e.AnnotationConfigEmbeddedWebApplicationContext - Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5a63f509: startup date [Fri Sep 21 15:39:26 CST 2018]; root of context hierarchy
+2018-09-21 15:39:26.690 [background-preinit] INFO  org.hibernate.validator.internal.util.Version - HV000001: Hibernate Validator 5.3.5.Final
+2018-09-21 15:39:31.604 [main] WARN  o.s.c.annotation.ConfigurationClassPostProcessor - Cannot enhance @Configuration bean definition 'mybatisConfigurer' since its singleton instance has been created too early. The typical cause is a non-static @Bean method with a BeanDefinitionRegistryPostProcessor return type: Consider declaring such methods as 'static'.
+2018-09-21 15:39:34.261 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat initialized with port(s): 8989 (http)
+2018-09-21 15:39:34.279 [main] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2018-09-21 15:39:34.280 [main] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet Engine: Apache Tomcat/8.5.20
+2018-09-21 15:39:34.766 [localhost-startStop-1] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2018-09-21 15:39:34.767 [localhost-startStop-1] INFO  org.springframework.web.context.ContextLoader - Root WebApplicationContext: initialization completed in 8651 ms
+2018-09-21 15:39:35.828 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'dispatcherServlet' to [/]
+2018-09-21 15:39:35.830 [localhost-startStop-1] INFO  o.s.boot.web.servlet.ServletRegistrationBean - Mapping servlet: 'statViewServlet' to [/druid/*]
+2018-09-21 15:39:35.834 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'metricsFilter' to: [/*]
+2018-09-21 15:39:35.834 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'characterEncodingFilter' to: [/*]
+2018-09-21 15:39:35.834 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'hiddenHttpMethodFilter' to: [/*]
+2018-09-21 15:39:35.835 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'httpPutFormContentFilter' to: [/*]
+2018-09-21 15:39:35.835 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'requestContextFilter' to: [/*]
+2018-09-21 15:39:35.835 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webRequestLoggingFilter' to: [/*]
+2018-09-21 15:39:35.835 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'webStatFilter' to urls: [/*]
+2018-09-21 15:39:35.835 [localhost-startStop-1] INFO  o.s.boot.web.servlet.FilterRegistrationBean - Mapping filter: 'applicationContextIdFilter' to: [/*]
+2018-09-21 15:39:40.522 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerAdapter - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@5a63f509: startup date [Fri Sep 21 15:39:26 CST 2018]; root of context hierarchy
+2018-09-21 15:39:40.659 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/charging/qrCode],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.AppChargingController.scanQR(java.lang.String,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.661 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/charging],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.AppChargingController.chargingStatus(javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.661 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/charging],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AppChargingController.fillOrder(com.company.project.dto.OrderDto,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.661 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/charging/motor],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AppChargingController.motor(java.lang.String)
+2018-09-21 15:39:40.662 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/charging/mode/{mode}],methods=[PUT]}" onto public com.company.project.core.Result com.company.project.app.controller.AppChargingController.chargingOperation(java.lang.Integer,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.662 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/user/orders],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.AppOrderController.orderList(javax.servlet.http.HttpServletRequest,java.lang.Integer,java.lang.Integer)
+2018-09-21 15:39:40.664 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter/rechargeOrder],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AppRechargeController.add(com.company.project.model.RechargeOrder,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.665 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter/rechargeOrder/status],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AppRechargeController.update(com.company.project.model.RechargeOrder)
+2018-09-21 15:39:40.667 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/siteAuxiliary/errorRecovery],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AppSiteAuxiliaryController.add(com.company.project.model.ErrorRecovery,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.668 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/siteAuxiliary/site/chargingRecord],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AppSiteAuxiliaryController.add(com.company.project.model.SiteChargingRecord,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.669 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/siteAuxiliary/site/{sid}/chargingRecord],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.AppSiteAuxiliaryController.list(java.lang.Integer,java.lang.Integer,java.lang.Integer)
+2018-09-21 15:39:40.671 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AuthController.add(com.company.project.model.User)
+2018-09-21 15:39:40.671 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/auth],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.AuthController.login(com.company.project.model.User)
+2018-09-21 15:39:40.673 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/chargingNet],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.ChargingNetController.list(com.company.project.dto.SiteDetailDto,java.lang.Integer,java.lang.Integer)
+2018-09-21 15:39:40.673 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/chargingNet/{id}],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.ChargingNetController.siteDetail(java.lang.Integer)
+2018-09-21 15:39:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter],methods=[PUT]}" onto public com.company.project.core.Result com.company.project.app.controller.PersonalCenterController.update(com.company.project.model.User,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.676 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.controller.PersonalCenterController.detail(javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.677 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter/headProtrait],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.controller.PersonalCenterController.uploadHeadPortrait(javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.677 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter/password],methods=[PUT]}" onto public com.company.project.core.Result com.company.project.app.controller.PersonalCenterController.updatePassword(com.company.project.dto.UserDetailDto,javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.677 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/personalCenter/password/update],methods=[PUT]}" onto public com.company.project.core.Result com.company.project.app.controller.PersonalCenterController.updatePassword(java.lang.String)
+2018-09-21 15:39:40.680 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/close],methods=[POST]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.close(com.company.project.app.H5Pay.entity.H5Order)
+2018-09-21 15:39:40.681 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/secureCancel],methods=[POST]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.cancel(com.company.project.app.H5Pay.entity.H5Order)
+2018-09-21 15:39:40.681 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/notifyUrl],methods=[POST]}" onto public void com.company.project.app.H5Pay.controller.H5PayController.notifyHandle(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018-09-21 15:39:40.681 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/returnUrl],methods=[GET]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.goReturnUrl(javax.servlet.http.HttpServletRequest) throws java.lang.Exception
+2018-09-21 15:39:40.682 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/refund],methods=[POST]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.refund(com.company.project.app.H5Pay.entity.H5Order)
+2018-09-21 15:39:40.682 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/secureComplete],methods=[POST]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.secureComplete(com.company.project.app.H5Pay.entity.H5Order)
+2018-09-21 15:39:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/orderQuery],methods=[POST]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.orderQuery(com.company.project.app.H5Pay.entity.H5Order)
+2018-09-21 15:39:40.683 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/h5pay/h5pay],methods=[GET]}" onto public java.lang.String com.company.project.app.H5Pay.controller.H5PayController.publicPay(com.company.project.model.RechargeOrder,java.lang.String,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.lang.Exception
+2018-09-21 15:39:40.684 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/invoice/{djhm}/orders],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.invoice.web.InvoiceController.getRechargeOrdersOfInvoice(java.lang.String)
+2018-09-21 15:39:40.685 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/invoice/uninvoicedOrders],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.invoice.web.InvoiceController.getListOfUninvoicedOrders(javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.685 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/invoice],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.invoice.web.InvoiceController.getInvoices(javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.685 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/app/invoice/{djhm}],methods=[GET]}" onto public com.company.project.core.Result com.company.project.app.invoice.web.InvoiceController.getInvoiceDetail(java.lang.String)
+2018-09-21 15:39:40.689 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/api/orderdata],methods=[POST]}" onto public com.company.project.core.Result com.company.project.app.invoice.web.OrderdataController.add(java.lang.String)
+2018-09-21 15:39:40.691 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/evcs/20160701/query_station_status],methods=[POST]}" onto public com.company.project.platform.common.PlatformResult com.company.project.platform.controller.CommonMessageExchange_2.query_station_status(com.company.project.platform.common.PlatformRequestBody)
+2018-09-21 15:39:40.692 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/evcs/20160701/query_stations_info],methods=[POST]}" onto public com.company.project.platform.common.PlatformResult com.company.project.platform.controller.CommonMessageExchange_2.query_stations_info(com.company.project.platform.common.PlatformRequestBody)
+2018-09-21 15:39:40.693 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/evcs/20160701],methods=[GET]}" onto public java.lang.String com.company.project.platform.controller.DataTransmissionAndSecurityController.query_token()
+2018-09-21 15:39:40.693 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/evcs/20160701/query_token],methods=[POST]}" onto public com.company.project.platform.common.PlatformResult com.company.project.platform.controller.DataTransmissionAndSecurityController.query_token(com.company.project.platform.common.PlatformRequestBody) throws java.lang.Exception
+2018-09-21 15:39:40.695 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/evcs/20160701/query_equip_charge_status],methods=[POST]}" onto public com.company.project.platform.common.PlatformResult com.company.project.platform.controller.ServiceMessageExchange_3.query_equip_charge_status(com.company.project.platform.common.PlatformRequestBody)
+2018-09-21 15:39:40.698 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-09-21 15:39:40.699 [main] INFO  o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-09-21 15:39:40.930 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 15:39:41.024 [main] INFO  o.s.web.servlet.handler.SimpleUrlHandlerMapping - Mapped URL path [/**/favicon.ico] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-09-21 15:39:43.409 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/heapdump || /heapdump.json],methods=[GET],produces=[application/octet-stream]}" onto public void org.springframework.boot.actuate.endpoint.mvc.HeapdumpMvcEndpoint.invoke(boolean,javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse) throws java.io.IOException,javax.servlet.ServletException
+2018-09-21 15:39:43.410 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/info || /info.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.411 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/dump || /dump.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.412 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/health || /health.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.HealthMvcEndpoint.invoke(javax.servlet.http.HttpServletRequest,java.security.Principal)
+2018-09-21 15:39:43.412 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/trace || /trace.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.413 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EnvironmentMvcEndpoint.value(java.lang.String)
+2018-09-21 15:39:43.414 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/env || /env.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.415 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/mappings || /mappings.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.415 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/autoconfig || /autoconfig.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.416 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/auditevents || /auditevents.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public org.springframework.http.ResponseEntity<?> org.springframework.boot.actuate.endpoint.mvc.AuditEventsMvcEndpoint.findByPrincipalAndAfterAndType(java.lang.String,java.util.Date,java.lang.String)
+2018-09-21 15:39:43.416 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.MetricsMvcEndpoint.value(java.lang.String)
+2018-09-21 15:39:43.417 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/metrics || /metrics.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.417 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/beans || /beans.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.418 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/configprops || /configprops.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:43.420 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers/{name:.*}],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.get(java.lang.String)
+2018-09-21 15:39:43.421 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers/{name:.*}],methods=[POST],consumes=[application/vnd.spring-boot.actuator.v1+json || application/json],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.LoggersMvcEndpoint.set(java.lang.String,java.util.Map<java.lang.String, java.lang.String>)
+2018-09-21 15:39:43.422 [main] INFO  o.s.b.actuate.endpoint.mvc.EndpointHandlerMapping - Mapped "{[/loggers || /loggers.json],methods=[GET],produces=[application/vnd.spring-boot.actuator.v1+json || application/json]}" onto public java.lang.Object org.springframework.boot.actuate.endpoint.mvc.EndpointMvcAdapter.invoke()
+2018-09-21 15:39:44.216 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Registering beans for JMX exposure on startup
+2018-09-21 15:39:44.218 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Bean with name 'statFilter' has been autodetected for JMX exposure
+2018-09-21 15:39:44.226 [main] INFO  o.s.jmx.export.annotation.AnnotationMBeanExporter - Located MBean 'statFilter': registering with JMX server as MBean [com.alibaba.druid.filter.stat:name=statFilter,type=StatFilter]
+2018-09-21 15:39:44.227 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Registering beans for JMX exposure on startup
+2018-09-21 15:39:44.231 [main] INFO  o.s.context.support.DefaultLifecycleProcessor - Starting beans in phase 0
+2018-09-21 15:39:44.234 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'auditEventsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=auditEventsEndpoint]
+2018-09-21 15:39:44.362 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'requestMappingEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=requestMappingEndpoint]
+2018-09-21 15:39:44.373 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'environmentEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=environmentEndpoint]
+2018-09-21 15:39:44.377 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'healthEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=healthEndpoint]
+2018-09-21 15:39:44.384 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'beansEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=beansEndpoint]
+2018-09-21 15:39:44.386 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'infoEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=infoEndpoint]
+2018-09-21 15:39:44.389 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'loggersEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=loggersEndpoint]
+2018-09-21 15:39:44.396 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'metricsEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=metricsEndpoint]
+2018-09-21 15:39:44.399 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'traceEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=traceEndpoint]
+2018-09-21 15:39:44.401 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'dumpEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=dumpEndpoint]
+2018-09-21 15:39:44.403 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'autoConfigurationReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=autoConfigurationReportEndpoint]
+2018-09-21 15:39:44.406 [main] INFO  o.s.b.actuate.endpoint.jmx.EndpointMBeanExporter - Located managed bean 'configurationPropertiesReportEndpoint': registering with JMX server as MBean [org.springframework.boot:type=Endpoint,name=configurationPropertiesReportEndpoint]
+2018-09-21 15:39:44.423 [main] INFO  o.s.s.a.ScheduledAnnotationBeanPostProcessor - No TaskScheduler/ScheduledExecutorService bean found for scheduled processing
+2018-09-21 15:39:44.434 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8989"]
+2018-09-21 15:39:44.452 [main] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8989"]
+2018-09-21 15:39:44.468 [main] INFO  org.apache.tomcat.util.net.NioSelectorPool - Using a shared selector for servlet write/read
+2018-09-21 15:39:44.491 [main] INFO  o.s.b.c.e.tomcat.TomcatEmbeddedServletContainer - Tomcat started on port(s): 8989 (http)
+2018-09-21 15:39:44.496 [main] INFO  com.company.project.Application - Started Application in 19.058 seconds (JVM running for 22.775)
+2018-09-21 15:40:00.001 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========推送充电状态===========
+2018-09-21 15:40:00.335 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"597381A62758BBB8EA1EAFEEE1B2EAC8","TimeStamp":"20180921154000"}
+2018-09-21 15:40:00.597 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNion5iUNaNMkXHfKFoQuzYGSFXENhBmxDT2TwNt6p7w9XLFTL7eCZ1X8iN6E+CRqYT5", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "F1AF288011345CFE4BECDD95F42D0A27"
+}
+
+2018-09-21 15:40:00.677 [pool-1-thread-1] INFO  com.alibaba.druid.pool.DruidDataSource - {dataSource-1} inited
+2018-09-21 15:40:01.722 [pool-1-thread-1] DEBUG c.c.p.d.ChargingOrderMapper.findByChargingOrderDto - ==>  Preparing: SELECT o.id, u. NAME username, u.phone, s.`name` sitename, (o.cprice+o.sprice) cost, o.cprice, o.sprice, o.electric_quantity, o.duration, o.begin_time, o.end_time, o.status, o.otime FROM tb_charging_order o LEFT JOIN tb_user u ON o.uid = u.id LEFT JOIN tb_pile p ON p.id = o.pid LEFT JOIN tb_site s ON p.sid = s.id LEFT JOIN tb_admin a ON s.uid = a.id WHERE o.is_del=0 AND o.begin_time BETWEEN ? AND ? AND o.end_time BETWEEN ? AND ? ORDER BY o.id DESC 
+2018-09-21 15:40:01.735 [pool-1-thread-1] DEBUG c.c.p.d.ChargingOrderMapper.findByChargingOrderDto - ==> Parameters: 2018-09-20 15:40:00.6(Timestamp), 2018-09-21 15:40:00.601(Timestamp), 2018-09-20 15:40:00.6(Timestamp), 2018-09-21 15:40:00.601(Timestamp)
+2018-09-21 15:40:01.827 [pool-1-thread-1] DEBUG c.c.p.d.ChargingOrderMapper.findByChargingOrderDto - <==      Total: 6
+2018-09-21 15:40:01.870 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========暂停时间===========
+2018-09-21 15:40:01.870 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 暂停时间：2018-09-21 15:39:44.0
+2018-09-21 15:40:01.870 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 时间差：17870
+2018-09-21 15:40:01.870 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========暂停时间===========
+2018-09-21 15:40:01.870 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 暂停时间：2018-09-21 14:20:56.0
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 时间差：4745870
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========暂停时间===========
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 暂停时间：2018-09-21 07:01:56.0
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 时间差：31085871
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========暂停时间===========
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 暂停时间：2018-09-21 06:57:10.0
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 时间差：31371871
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========暂停时间===========
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 暂停时间：2018-09-21 06:45:41.0
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 时间差：32060871
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - ==========暂停时间===========
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 暂停时间：2018-09-21 02:07:41.0
+2018-09-21 15:40:01.871 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 时间差：48740871
+2018-09-21 15:40:01.872 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingOrderMapper.selectByPrimaryKey - ==>  Preparing: SELECT id,pid,uid,electric_quantity,begin_time,end_time,status,cprice,sprice,ctime,is_del,balance,duration,model,otime,set_value FROM tb_charging_order WHERE id = ? 
+2018-09-21 15:40:01.876 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingOrderMapper.selectByPrimaryKey - ==> Parameters: 178(Long)
+2018-09-21 15:40:01.968 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingOrderMapper.selectByPrimaryKey - <==      Total: 1
+2018-09-21 15:40:01.969 [pool-1-thread-1] DEBUG c.c.project.dao.PileMapper.selectByPrimaryKey - ==>  Preparing: SELECT id,num,sid,qr_code,image,adv,fid,name,ctime,type,electric_quantity,voltage,electricity,status,is_del,hgid,cprice,sprice,set_value,duration,ctype FROM tb_pile WHERE id = ? 
+2018-09-21 15:40:01.970 [pool-1-thread-1] DEBUG c.c.project.dao.PileMapper.selectByPrimaryKey - ==> Parameters: 635(Integer)
+2018-09-21 15:40:02.039 [pool-1-thread-1] DEBUG c.c.project.dao.PileMapper.selectByPrimaryKey - <==      Total: 1
+2018-09-21 15:40:02.042 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingRecordMapper.findLastRecordByOid - ==>  Preparing: select * from tb_charging_record where oid =? and ctime=(select max(ctime) from tb_charging_record where oid =?) 
+2018-09-21 15:40:02.042 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingRecordMapper.findLastRecordByOid - ==> Parameters: 178(Long), 178(Long)
+2018-09-21 15:40:02.112 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingRecordMapper.findLastRecordByOid - <==      Total: 1
+2018-09-21 15:40:02.114 [pool-1-thread-1] INFO  c.company.project.platform.util.InitPlatformModel - 充电详情没做
+2018-09-21 15:40:02.120 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:HMhN1qs24-M5H2jhh_5uaz5BmPJQGqkP
+2018-09-21 15:40:02.120 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:02.120 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ChargeModel":3,"ConnectorID":"027b31","ConnectorStatus":3,"CurrentA":-113.0,"CurrentB":0.0,"CurrentC":0.0,"ElecMoney":8.63,"EndTime":"2018-09-21 15:21:05","SeviceMoney":5.18,"Soc":0.75,"StartChargeSeq":"XXXXXXXXXXXXXXXXXXXXXXXX178","StartChargeSeqStat":2,"StartTime":"2018-09-21 15:21:20","SumPeriod":0,"TotalMoney":13.81,"TotalPower":15.15,"VoltageA":327.0,"VoltageB":0.0,"VoltageC":0.0}
+2018-09-21 15:40:02.121 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:02.121 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"0cbp717A+L4TehGyrCmMVKuZLAkihh00FSL9Ag4r0cHFnZFEqAoNrNUl5MQrXKksGKXaBmQhBt3l5c69gw255eA/6W1OOhfw5VbjaNXTiU2ZP4xv0Noh1YlJaLC0puXwXrpC5ezGBsNqzclG8U48wWixCHI62h/XvJrP2kHz6ZU0M3iQxIK3zPcNMz/ph8YTDALhbIWqN3WcBWnVFbKvvpNlx91+5TcYs7hqpTMT/Dl8zy/1ICbO51noeJ67W0jsprsxU95dL2IivFI/G6Fd9EtU9rlGZl0fi/iCm8DY+h/eGWFIb/oEKHE++L86t+0eAwogJZtHLOBGDMNDKgccLvCA+gkGBQaPT7knA8jHGsPUu6zahbakOhWlWIQuvc7Gq9EJlQbvW7M8dSM+yRXwy9dsDfE1JLm/wLe1GMroKTpz1rPC/noVJlmOUp2LmhYvraUf/eQ5TiPuUNWjKPvViYQlodLJpdWbmv/G4aLgkiZ7YH1mPfp1gtfN1xDRP28cU9mKW4zuzcJRoUr0rg3d0A==","OperatorID":"734810352","Seq":"0001","Sig":"9E67F8AF36239FF5908363C4C41637D9","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.166 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:02.166 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 返回数据：{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:02.166 [pool-1-thread-1] DEBUG c.c.project.dao.PileMapper.selectByPrimaryKey - ==>  Preparing: SELECT id,num,sid,qr_code,image,adv,fid,name,ctime,type,electric_quantity,voltage,electricity,status,is_del,hgid,cprice,sprice,set_value,duration,ctype FROM tb_pile WHERE id = ? 
+2018-09-21 15:40:02.167 [pool-1-thread-1] DEBUG c.c.project.dao.PileMapper.selectByPrimaryKey - ==> Parameters: 635(Integer)
+2018-09-21 15:40:02.231 [pool-1-thread-1] DEBUG c.c.project.dao.PileMapper.selectByPrimaryKey - <==      Total: 1
+2018-09-21 15:40:02.232 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingRecordMapper.findLastRecordByOid - ==>  Preparing: select * from tb_charging_record where oid =? and ctime=(select max(ctime) from tb_charging_record where oid =?) 
+2018-09-21 15:40:02.232 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingRecordMapper.findLastRecordByOid - ==> Parameters: 178(Long), 178(Long)
+2018-09-21 15:40:02.307 [pool-1-thread-1] DEBUG c.c.p.dao.ChargingRecordMapper.findLastRecordByOid - <==      Total: 1
+2018-09-21 15:40:02.311 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:HMhN1qs24-M5H2jhh_5uaz5BmPJQGqkP
+2018-09-21 15:40:02.311 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:02.311 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ChargeModel":3,"ConnectorID":"027b31","EndTime":"2018-09-21 15:21:05","StartChargeSeq":"734810352178","StartTime":"2018-09-21 15:21:20","StopReason":0,"SumPeriod":0,"TotalElecMoney":8.63,"TotalMoney":13.81,"TotalPower":15.15,"TotalSeviceMoney":5.18,"Vin":""}
+2018-09-21 15:40:02.312 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:02.312 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"0cbp717A+L4TehGyrCmMVKuZLAkihh00FSL9Ag4r0cEuJNIXTkYxUjUSkZhbgEJQLCle2sdOiWDhcMqdXEBkWBcCBXTw9kUipqeROHB28Iqi4nUOfFuaY7bW1Gv2QjpU4jZSyeu1Q2sfZ8zMry1xNDQtilRdggfvuRlPHfHxlb82jZTORhHAw2ZvYfIVkCf3xgTXrd82tRZ7q3vqFtv1MPQ2Os64c4QgWuos1yt6+8kK5I2L+18k2mVP5i/EU1Jq1vmmkUSiCn/1dgexcszm0ru+ChaGHhOw1+/3Exr1v2Y2RIbJVAkUI5mArcL9Jyym2xu/y/KG+WlUTfK0qaa119SeGtzZdvhskqJvCxDqRS0=","OperatorID":"734810352","Seq":"0001","Sig":"00B5F501AC3188C8B3037E4ADB101D4B","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.377 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:02.377 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.ThirdPart - 返回数据：{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:02.377 [pool-1-thread-1] DEBUG com.company.project.dao.PileMapper.selectAll - ==>  Preparing: SELECT id,num,sid,qr_code,image,adv,fid,name,ctime,type,electric_quantity,voltage,electricity,status,is_del,hgid,cprice,sprice,set_value,duration,ctype FROM tb_pile 
+2018-09-21 15:40:02.378 [pool-1-thread-1] DEBUG com.company.project.dao.PileMapper.selectAll - ==> Parameters: 
+2018-09-21 15:40:02.480 [pool-1-thread-1] DEBUG com.company.project.dao.PileMapper.selectAll - <==      Total: 31
+2018-09-21 15:40:02.480 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=000121, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:02.483 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"A8B8ABCF5A9CF5D9487993F88C090D02","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.526 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioE4xSSNxsLSRMMYJG/tgJsB0e0lAkYtl1WQre07zZy0W6LEzp6/HgCovBRYfHCrFc", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "323FBA94D447CFFF0FBBB7D1A6457143"
+}
+
+2018-09-21 15:40:02.527 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:ThVXvcDURxIFdVPPltDZTaM_bYkL6ynk
+2018-09-21 15:40:02.527 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:02.527 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"000121","Status":1}}
+2018-09-21 15:40:02.527 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:02.527 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcwMHimKt76xXg0JEpO7CXdkwSCfOX/4vBYL9s2FNIqOw==","OperatorID":"734810352","Seq":"0001","Sig":"65B4D7447526C81B51B2C1E46344A3C0","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.565 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:02.565 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:02.565 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=000221, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:02.565 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"A8B8ABCF5A9CF5D9487993F88C090D02","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.605 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiokoT551owZLVh/2DdeEOrUCKWJgw2mw1g7TXoIkPvotw3kBwPGCpb3AoR0OLCvtnc", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "FD69B301BA061C316A93E78EFC64059C"
+}
+
+2018-09-21 15:40:02.605 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:G2682apHqX0BMp3LoSDlIVjbpfzF_E25
+2018-09-21 15:40:02.605 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:02.605 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"000221","Status":255}}
+2018-09-21 15:40:02.606 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:02.606 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBd0UnoltslPLNGMlnfFidI1VvAbgTAe8btfcbTPSianPg==","OperatorID":"734810352","Seq":"0001","Sig":"D408D78FE0B3DBA13F0A5C4EE139C586","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.722 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:02.722 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:02.722 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=000321, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:02.723 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"A8B8ABCF5A9CF5D9487993F88C090D02","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.771 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiodqDnPX2NfYPDotb95sdeDwjGasQFSGiIaoDJrFLxFszqbSJKEq89PILjuWDGcP7E", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "4E6B71C2AEFB18B3A87811FBD783B515"
+}
+
+2018-09-21 15:40:02.773 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:lpHS9T_O3R2ZjtLXzuKp_laNB3loKaCW
+2018-09-21 15:40:02.773 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:02.773 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"000321","Status":255}}
+2018-09-21 15:40:02.774 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:02.774 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBdoNnoilTxIjiODBx6sZ8bN2s7H+fkt/SGy8NqNxezwiA==","OperatorID":"734810352","Seq":"0001","Sig":"7303BF5232D64AB71DF051D5D747D1C1","TimeStamp":"20180921154002"}
+2018-09-21 15:40:02.832 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "t/pOncooVqexgSI9Yyvy+Q==", 
+  "Msg": "connector_id:000321 not in cache or not have pile_code", 
+  "Ret": 500, 
+  "Sig": "F03F1804254BBCE80B515B550A720774"
+}
+
+2018-09-21 15:40:02.832 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:02.832 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=000421, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:02.833 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"A8B8ABCF5A9CF5D9487993F88C090D02","TimeStamp":"20180921154002"}
+2018-09-21 15:40:03.039 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiomV7pQVOQbHwUlYK5otpIElVZ+xUnN78DsnZTq/O1bDY81Vu20XmZyP5+Fe9v9rAY", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "9ED8D2A667E4C48C7911EFEB74BEA9E0"
+}
+
+2018-09-21 15:40:03.039 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:_tcc9urP_wbPUj4o7DLBU_2IS3jEVUTh
+2018-09-21 15:40:03.039 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.039 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"000421","Status":255}}
+2018-09-21 15:40:03.040 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.040 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBfJfxAk9Wm3QIlya7T4xH+w7YUQ5tcjlrWrJlf+iXtq5A==","OperatorID":"734810352","Seq":"0001","Sig":"EDD03A4066C1EA60932E9CB85C4BC547","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.097 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "t/pOncooVqexgSI9Yyvy+Q==", 
+  "Msg": "connector_id:000421 not in cache or not have pile_code", 
+  "Ret": 500, 
+  "Sig": "4AEE8BDB53D1B1CC094898625A97E1FE"
+}
+
+2018-09-21 15:40:03.097 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.097 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=01af21, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.098 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.147 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioeqQeyEwzqiiao1tmPKFEQ5lg3/lu07KaQcrXt0AqYqWrPSRCcP6F+bIj0YDAA3iw", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "D7DF08C1EB1FC52282EF93D1FE4B3438"
+}
+
+2018-09-21 15:40:03.147 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:-BaddYxJIv82fc2pCxT6GH-qSJ07czP7
+2018-09-21 15:40:03.147 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.147 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"01af21","Status":1}}
+2018-09-21 15:40:03.148 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.148 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcqdskmGqLIFl+zDIzZL/Faj90zur3YRKRPtjDIU0nopA==","OperatorID":"734810352","Seq":"0001","Sig":"BE3E45C0773500CC1B039D916E4E2F79","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.263 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:03.263 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.263 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=01b021, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.264 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.302 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiocyXyi1YGS7Xp4Wc29+MlagAZkg/Gn54eLH6GyMti0Xa3TBagPY/Eei7FdKye8iCL", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "4A23B7B2E4259E996C9BCD7F463D5EB7"
+}
+
+2018-09-21 15:40:03.304 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:R-BPLccovp969b_86ZinbCEtIxONG2kn
+2018-09-21 15:40:03.305 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.305 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"01b021","Status":255}}
+2018-09-21 15:40:03.306 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.306 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBe5yzPQvom4KQbSr5ul33KOeeWWjgig4nbwyUL3VNG7bA==","OperatorID":"734810352","Seq":"0001","Sig":"4EC61293A6AD67419FD67984959257B2","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.372 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:03.372 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.372 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=01b121, status=2, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.372 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.421 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiohM9PnaltpnLjgAuQuO/g2leoKvpKeHBCh3QLDu6K7+KwWepCYuGGN6sGVUYWDnEp", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "F0CB05F97F17279D4917F3A409520AA5"
+}
+
+2018-09-21 15:40:03.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:mpqW6tdLpnnC9VLGycVQ_Ia9pRmHqhbF
+2018-09-21 15:40:03.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"01b121","Status":2}}
+2018-09-21 15:40:03.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBdHicpScIYvXTA7pBVSjknoJA/zxfH42ellt2x9SOQWFA==","OperatorID":"734810352","Seq":"0001","Sig":"2B545DB5070BD2B65D3C105A0CF345E5","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.482 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:03.482 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.482 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021321, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.482 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.529 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNio9aZHAinMd3CHWLrk9aMQv5fWrLoa6EI9LrqDL4rTNbEFvGSZk2PvVHvJfEkMEsba", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "BBD70B05430E2AEE16AB051E8CCD8ADE"
+}
+
+2018-09-21 15:40:03.530 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:Fvwm9qDbu7wUOoM0eb7GXb0qC2sW3_p_
+2018-09-21 15:40:03.530 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.531 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021321","Status":255}}
+2018-09-21 15:40:03.531 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.531 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcE72cHY0B46DFnHHojYUTqm9DpNJmSzCSmOfAi+Eoeaw==","OperatorID":"734810352","Seq":"0001","Sig":"DEC6C8231044B002809636CD2990D3A4","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.609 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:03.609 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.609 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021421, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.610 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.656 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioGNRyFgMipczkaeRqI6h1/rNWrsK0FQnrMiYAC0is64Ogf59mjdxZ2eKWTIym/cDM", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "EACC8B82E664339663D89CFC95262FBA"
+}
+
+2018-09-21 15:40:03.657 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:KzEWP1mqwkV2NrRLsHbKkh0WqNvUAhx4
+2018-09-21 15:40:03.657 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.657 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021421","Status":255}}
+2018-09-21 15:40:03.657 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.657 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBexMO7gi8lPqxxCx7gEPStEGm376qokcrANsb+WG/XUiw==","OperatorID":"734810352","Seq":"0001","Sig":"301746AEA2F2D50B902DEE85FD473404","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.698 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:03.698 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.698 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021521, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.699 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.730 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioj/0yprO5sTfOX1t2m/9RkG6l2YsXLCpGM4M9KPgQEVKakUD1j0uvnzqQMrI9DP81", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "0A4BFC17351293E40A28C17121F0085B"
+}
+
+2018-09-21 15:40:03.731 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:wOrVd2S_3rsRR531mEs3ERxGR0UiSchE
+2018-09-21 15:40:03.731 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.731 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021521","Status":255}}
+2018-09-21 15:40:03.732 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.732 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcCz0R3sZlQw2KGfvoWxN8la8PKzHJ6Xa5nJXqP3+X+eg==","OperatorID":"734810352","Seq":"0001","Sig":"01D97920DDE54ECD087FAC69A0296E3D","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.777 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:03.777 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.777 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021621, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.778 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.830 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNio904U0GWTiOt6nr9dMyXaa0A32CZVFz9RHEPVogKZeetkm0nEmnHg8b/6axl1+fgi", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "1001412DECD0C2EF08AF3886178CC160"
+}
+
+2018-09-21 15:40:03.831 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:Gly1R-YmvZScHvH32uDAYrT9yvtAwzJs
+2018-09-21 15:40:03.831 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.831 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021621","Status":255}}
+2018-09-21 15:40:03.831 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.831 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBeAZwqiDs1r0ngoICTE6RIqay1Brwxmg66yMN/VIV25kA==","OperatorID":"734810352","Seq":"0001","Sig":"188269E3831CF488A3A030314D0B792F","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.885 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:03.885 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.885 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021721, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.886 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.922 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioDdPxTSZH1pbh8BTACR9lzwnAWhngW/xOHHKKB+AxMzDYAgCSVhNd1tIZcu6kWmSb", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "B71C5C930BFE22EDD9A4C95F558AC80C"
+}
+
+2018-09-21 15:40:03.922 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:YlGYZfRmaNPj8qFuahcErv2vu7iiwsL6
+2018-09-21 15:40:03.923 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.923 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021721","Status":255}}
+2018-09-21 15:40:03.923 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.923 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBfEUttfRLlh/cdpMcWl4tsr+7QRyuQ0HTz5GhuzTSzaQQ==","OperatorID":"734810352","Seq":"0001","Sig":"4D8C0349FC9DD6C25FDEE1448CF6CB3B","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.960 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:03.960 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:03.960 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021821, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:03.961 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"B8389A09864CBF3E96C44A78A2FE58BE","TimeStamp":"20180921154003"}
+2018-09-21 15:40:03.995 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiodlae0q8wWKRip5MkwAnOAvO6I+edOMPWYD/e7h6JRF8q+ha8AWzr0AqCNwpiNJ9t", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "9FC569AA1AEB63CFFE3AAA0F75935356"
+}
+
+2018-09-21 15:40:03.996 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:5q-BYgKgTXKZfG2uFM0ef515YVl9hKCe
+2018-09-21 15:40:03.996 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:03.996 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021821","Status":255}}
+2018-09-21 15:40:03.997 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:03.997 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBe/ll1ANq2lZ51/TKb3s7/sXS8cZQmwmU0sMXFjBcC5pA==","OperatorID":"734810352","Seq":"0001","Sig":"3A4581A885C0A82D95ACFA8E5331263D","TimeStamp":"20180921154003"}
+2018-09-21 15:40:04.036 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.036 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.036 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021921, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.037 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.066 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioFtN13P3/JC6Hb3Vsm8rKw3pseSr/4rvZ9otWg4GisYyZA8RRMn4PV6MvDf7pHzgB", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "1F91DFE0E4F578C859E78E1D6B0E8FF2"
+}
+
+2018-09-21 15:40:04.066 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:peh0gpEOKNqJumFaa2UOx6ebFVrvo5qz
+2018-09-21 15:40:04.066 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.066 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021921","Status":255}}
+2018-09-21 15:40:04.067 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.067 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcHNE4pz+Ng+9IzLbuSBN3KgzdxsT5uChKFWMlb+tmszg==","OperatorID":"734810352","Seq":"0001","Sig":"6D064A329D23C7A4C420E07C9C49E71D","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.103 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.103 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.103 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=021a21, status=255, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.103 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.136 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiorvQT+zIhLioyZ3h0vlJt9fjmUY6ARapfBbPIXxjJgPOKcKiAgbUlzpUPm3a8Oh69", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "A324A35669E09A7CBA6FEB6A51B81678"
+}
+
+2018-09-21 15:40:04.137 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:2E0idEa_Mc5aLd8ax5YUjJDZ_opONpRi
+2018-09-21 15:40:04.137 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.137 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"021a21","Status":255}}
+2018-09-21 15:40:04.139 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.139 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBd4HlkAxv/oyZctP7Dot9WGu6PFWabfS4YULsQNNT+CMQ==","OperatorID":"734810352","Seq":"0001","Sig":"6002BBA775F26741C359B3F279EB929E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.183 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.184 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.184 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027731, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.184 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.213 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioxusgOtVIZINVR3xERw7qr64UCagIZ6Zu7wchRXwubW+BpYZkRTarIHFtJBu3FUBj", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "F650F9C5111843078DAA5B7ABCB59210"
+}
+
+2018-09-21 15:40:04.214 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:PYYcMP_ydABSru-Y-wDAJ0gDahbhqxGO
+2018-09-21 15:40:04.214 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.214 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027731","Status":1}}
+2018-09-21 15:40:04.214 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.214 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcTwKrqzV2WSiSH+17oztrfKZF9z5TWqwNM7RLs0gMayA==","OperatorID":"734810352","Seq":"0001","Sig":"B30EE7860545F964605EFED39E7FE24F","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.247 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:04.247 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.247 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027831, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.247 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.273 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNio8uykWbF2F10IeBhRWppdetLwLeOpZHRW5Oxkma6/sf+zU6k2u3L20jtQCeEJA9cF", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "27D1F4847824E37CC0C7D0C4C3B8500C"
+}
+
+2018-09-21 15:40:04.273 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:oZyi4iUaZZ0JLHvmfQdxZErmkdWPdS1m
+2018-09-21 15:40:04.273 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.273 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027831","Status":1}}
+2018-09-21 15:40:04.273 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.274 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBc1wAd9Q9u5K0C9Ks9egqxA2+kZURz0pX5YgWYWDUcNHA==","OperatorID":"734810352","Seq":"0001","Sig":"2808765E743E2A019518B3DF5E4A9AF3","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.307 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.307 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.307 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027931, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.307 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.348 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNio0eMxu2ag6q4Btd7+u6Ap1AdlrQ1f+6NClggnRXGqg6ieE+Tz54S1wJliA9bbEy/I", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "AE1A92F77BB98B82AB6B333AA106CAA8"
+}
+
+2018-09-21 15:40:04.348 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:4W8odWSCb3F_0oOSuN_Cb-nS2ronQoPq
+2018-09-21 15:40:04.349 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.349 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027931","Status":1}}
+2018-09-21 15:40:04.349 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.349 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBfOCtZVX4EQ1PCRObsQTIV9kGxeWug3tfkPrjzhj4rhaA==","OperatorID":"734810352","Seq":"0001","Sig":"325A458E36AE1F99F034776775DD39BA","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.392 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.392 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.392 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027a31, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.393 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.420 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNio0au59kB56clWdGvIq4AO+7uc6LABUPstcovtofzXhrNw5dojTXlkaZAm/st2Y+RC", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "A742919D460C2D2C0893D94DD9C96AA1"
+}
+
+2018-09-21 15:40:04.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:2Z096UqddylqoAKxMvppjm1WDOt1CENG
+2018-09-21 15:40:04.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.421 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027a31","Status":1}}
+2018-09-21 15:40:04.422 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.422 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBeSLPwUyIhG6R2/0IusYpyVcO1gIA6nNmfMf8/hplF1ZA==","OperatorID":"734810352","Seq":"0001","Sig":"4096D1F9E9CC2C8FD294C0252CA92EAD","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.458 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.458 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.458 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027b31, status=3, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.459 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.485 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioIQMfMF13SRgUeXcAgweT6aHVFUfq9+H2yar5aODa000qxGf6RsN4kukW0OcFojN2", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "93B780A6F9C69C500D3847E6583ADD4B"
+}
+
+2018-09-21 15:40:04.485 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:va0C6RJTFJekXURM9GRl2lZ3nWgksdiu
+2018-09-21 15:40:04.485 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.485 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027b31","Status":3}}
+2018-09-21 15:40:04.486 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.486 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBf9yawCbhixvbNW10zAMx+M7FSNn+07gW9YmgTe0T1iqw==","OperatorID":"734810352","Seq":"0001","Sig":"C9F42434B79B4E7A4F50B6F9F971A292","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.520 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.520 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.520 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027c31, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.520 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.559 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioNHA3HQ1izqMc+4tr804QhPybC+/Th/YI8sppfBLjcCDenQE3DnQKKFXFQ9YNMlrR", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "82CC0EA0EA4444224F92A99E52DC4F2E"
+}
+
+2018-09-21 15:40:04.561 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:wUTu6aTuUs73fMyFxvQuH_LsqPIgIvcS
+2018-09-21 15:40:04.561 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.561 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027c31","Status":1}}
+2018-09-21 15:40:04.562 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.562 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcu5zV+RYglM3JoJDnfLNVzwIgf+RBLZ/7wWnTu3xS6dQ==","OperatorID":"734810352","Seq":"0001","Sig":"3CD04E58C3D400330C1E36E99BE5EE1C","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.598 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.598 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.598 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027d31, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.599 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.626 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioWLN/e13D2N24eYcc+xTKwXoUPowJkPSfjZVI99r3rVbDz4U2DgPfwd4YT7+dwXwS", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "81C13D5ED47AE3309E4A1AE434D40D4F"
+}
+
+2018-09-21 15:40:04.626 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:YslGABKEym11ipuKInP4t4108jfp_BMo
+2018-09-21 15:40:04.626 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.626 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027d31","Status":1}}
+2018-09-21 15:40:04.626 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.626 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBe8D2DDi8GrDsbgtdxsF/kTG3c2A0XhRwgfMBxidcIlpQ==","OperatorID":"734810352","Seq":"0001","Sig":"693DA4EC29A4CF7F63E16A411D8C7017","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.657 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.658 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.658 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=027e31, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.658 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.693 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioMnEXKAtHtA9SYgxOiIFWVwbzhRiQYs3aMonRhO5+og83u6qF8hcdUIYZw8UT1XaQ", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "5A7452601D1D4C2B9FB16792CDA2A443"
+}
+
+2018-09-21 15:40:04.693 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:hRTMfhj7zjFB1Sg-Rrh0qcfJKmTLtwCZ
+2018-09-21 15:40:04.693 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.693 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"027e31","Status":1}}
+2018-09-21 15:40:04.694 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.694 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcs8mRFjFTyrLHRlsKoBmMw9+iy44G9924QeeE08vjWpw==","OperatorID":"734810352","Seq":"0001","Sig":"1FCAAF88ED670C80168370A877D9AFAC","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.722 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:04.722 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.722 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02db21, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.723 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.766 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioe2nrB8jEADegX9A0CjoCPk/zwlMAP4YN9/0qHI3wcWUlvwmmtDmz0MHBuyMguuRw", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "8E69247608AE205274AD75BEC86F10CC"
+}
+
+2018-09-21 15:40:04.767 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:ULLg7kWJ4u15SL8w-mCl92ei1Db7X8H3
+2018-09-21 15:40:04.767 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.767 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02db21","Status":1}}
+2018-09-21 15:40:04.767 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.767 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcK9pyB0eHEFz3/+BFqCH3fdfmTQkpNBZuyYAiMFkZSBg==","OperatorID":"734810352","Seq":"0001","Sig":"5C5F06F20FA61D885749DE7C89BB557A","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.801 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.801 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.801 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02dc21, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.801 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.852 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioK1B3L5CciO+oUyZUItO61On6nGDNhKhQkO2hI+g6lBB0RwWjzhvbUIeRJG9CnlZM", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "BC83DD1DBC2EAA6FB32EF4DC70D3E842"
+}
+
+2018-09-21 15:40:04.852 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:ONammj2Fuv-3lGsaFc9jMu8PRJ_v3lEO
+2018-09-21 15:40:04.853 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.853 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02dc21","Status":1}}
+2018-09-21 15:40:04.853 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.853 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBduA4RNhCN0HTnVBLTPb3/Z7trHNIPzzBWFPuS072RuSQ==","OperatorID":"734810352","Seq":"0001","Sig":"2A502901AD390D6F35191B320DD32889","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.880 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "", 
+  "Msg": "Token is invalid or has expired.", 
+  "Ret": 4002, 
+  "Sig": ""
+}
+
+2018-09-21 15:40:04.880 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.880 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02dd21, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.881 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.910 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiotIkViK7c3xAna8ILt9d1M6r0AJqZRXVAhZdscb8/TboTavjviKayrUj/MatddXC1", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "B61595CBD57C84B771BC08F6FA2F4C70"
+}
+
+2018-09-21 15:40:04.910 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:tqEkKd4cavHsjPQez4dHrJQHivRZBR74
+2018-09-21 15:40:04.911 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.911 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02dd21","Status":1}}
+2018-09-21 15:40:04.911 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.911 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBf3FIjl2BUnognvX7qj+dK8139pD03Onx3G7Y1BdrGpoA==","OperatorID":"734810352","Seq":"0001","Sig":"5C625C662643E79EAB66A0B9BADD06FD","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.944 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:04.944 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:04.944 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02de21, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:04.944 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DEF3FA7B24A097B499690B0D9B51030E","TimeStamp":"20180921154004"}
+2018-09-21 15:40:04.971 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioFNkBlcIqieGoBgix54+858A2n91u++SbAWirGzkWOJhpqqiBsS+6pH7wB55ZJsQi", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "CC3CA36CA059D82143B7F77630837C5F"
+}
+
+2018-09-21 15:40:04.972 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:vvIFCyG0ziI6zL7zGp06IAzPxQsDblDb
+2018-09-21 15:40:04.972 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:04.972 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02de21","Status":1}}
+2018-09-21 15:40:04.972 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:04.972 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBfQbQHk34F0FyURGjdQTwFEgfeV97NoJtrunwkmzk2qEQ==","OperatorID":"734810352","Seq":"0001","Sig":"443335926BA31EC0C511CC17A9A21512","TimeStamp":"20180921154004"}
+2018-09-21 15:40:05.007 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:05.007 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:05.007 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02df21, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:05.007 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DB042B64931E93C480C2B42538F88EF0","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.034 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioyoOt8lTv4TxndLObllCz5UVaX8pCFCVSxGp0nS1paA62atak//b+WF56OOPKZYeK", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "1C94646B718ACF0A6618EB691274C60F"
+}
+
+2018-09-21 15:40:05.034 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:GvwriaHmuP00oSiX-wdKKHfuxvyvQxW8
+2018-09-21 15:40:05.035 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:05.035 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02df21","Status":1}}
+2018-09-21 15:40:05.035 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:05.035 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBcfTWXRdcNq6stxyEZ8P+G686DVTJrT3KB7YTBCvh+yBw==","OperatorID":"734810352","Seq":"0001","Sig":"D79B354BDB05208D434FAAD401AC57F9","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.078 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:05.078 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:05.078 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02e021, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:05.078 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DB042B64931E93C480C2B42538F88EF0","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.130 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNioaPjG572pqN2VASpYiYqJ8FH4jU0mPtIHMM8MrytDEMl/JTWLtcKpL4GDCuupG8il", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "E8FE9CD7934DEF260E69DDAEBA59C209"
+}
+
+2018-09-21 15:40:05.131 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:5l_lz5YPbi3Vcy-I465UDXrVjy_13W_V
+2018-09-21 15:40:05.131 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:05.131 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02e021","Status":1}}
+2018-09-21 15:40:05.131 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:05.131 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBc7aW0+iBFyOyReTI+YcjZHs/scKKxCDrSR5rm6+SjWlQ==","OperatorID":"734810352","Seq":"0001","Sig":"D11846CB4BF4565E16E9DC5F0D791E2C","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.175 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:05.175 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:05.175 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02e121, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:05.176 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DB042B64931E93C480C2B42538F88EF0","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.222 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiozBgHOZLyOrIJ+QNg84hicgU1yXHLLtFah+BF5JWJIsfQtY1I05eDprb+xvMAmnpN", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "334ACB3607DB5B47A6AFFA624B123B36"
+}
+
+2018-09-21 15:40:05.222 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:I4ylWl62jGX0ei3fBGCfn8ftKyZWIA1N
+2018-09-21 15:40:05.222 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:05.222 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02e121","Status":1}}
+2018-09-21 15:40:05.222 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:05.222 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBf6Pekr5jJ85cpSpY/rC9fK2XUPL67KnUuFC/N6kPHYpw==","OperatorID":"734810352","Seq":"0001","Sig":"9B4D0F59AEF93697CC2CECF7901E39A0","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.266 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:05.266 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:40:05.266 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 获取到连接设备状态消息：ConnectorStatusInfo(connectorID=02e221, status=1, parkStatus=null, lockStatus=null)
+2018-09-21 15:40:05.267 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformToken - 请求参数：{"Data":"uQEu17eJsWBvhmRC4S9bQOJBByeSa7BsB1KyLGddyWTd1z+qW1Dl2877PQbSewypCidZ0vsUzgyrPDahfbFQhw==","OperatorID":"734810352","Seq":"0001","Sig":"DB042B64931E93C480C2B42538F88EF0","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.305 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "QIjkNej+ruFQR1AQe6MEAFl94IZ9RIla9S2KhZBUjP0Z5P5I2JjC7K1dRp40OVdm+0/8d4bbgvUq/5QTF9RypHb95vDd2JEMfXBxlg1nBdhLAZmdoJfJr5BdVRNomNiouU5ptlfws1vfH6RZhy9tnBx0xm8CvYEoL+n68CgnCkRlwd25EAPRuW1EE/4VE8yG", 
+  "Msg": "Query token success", 
+  "Ret": 0, 
+  "Sig": "9C8CCCAF33CBED62562D14996649A702"
+}
+
+2018-09-21 15:40:05.305 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - accessToken:UH3Ns1FxoZF0R_EzFZuB5wrO5TAISjsN
+2018-09-21 15:40:05.306 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送数据=======
+2018-09-21 15:40:05.306 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"ConnectorStatusInfo":{"ConnectorID":"02e221","Status":1}}
+2018-09-21 15:40:05.306 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - =======推送对象=======
+2018-09-21 15:40:05.306 [pool-1-thread-1] INFO  com.company.project.platform.util.PlatformUtil - {"Data":"GLjbVAS1Q2Jm6dPMGkE7kTpyWfiu1o0uiI5AMMVCzBf50TGLMHRfh3OfQ7Q2M1XpeqOTAfm59ggTu4VNs1B53w==","OperatorID":"734810352","Seq":"0001","Sig":"779A782D4EE821023A4268CFF2F5ACBA","TimeStamp":"20180921154005"}
+2018-09-21 15:40:05.336 [pool-1-thread-1] INFO  HttpClientUtil - 得到的结果:{
+  "Data": "EjOyHLS9hxz7pGq3DJcGNg==", 
+  "Msg": "Notify station status success.", 
+  "Ret": 0, 
+  "Sig": "41F33003D2A729938E51FFB60426C85F"
+}
+
+2018-09-21 15:40:05.336 [pool-1-thread-1] INFO  com.company.project.platform.TimedTask.SecoundPart - 推送结果
+2018-09-21 15:41:36.311 [http-nio-8989-exec-2] INFO  o.a.c.core.ContainerBase.[Tomcat].[localhost].[/] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-09-21 15:41:36.311 [http-nio-8989-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization started
+2018-09-21 15:41:36.356 [http-nio-8989-exec-2] INFO  org.springframework.web.servlet.DispatcherServlet - FrameworkServlet 'dispatcherServlet': initialization completed in 45 ms
+2018-09-21 15:41:36.394 [http-nio-8989-exec-2] INFO  c.c.p.p.c.DataTransmissionAndSecurityController - uuid:b0915f4d-9ed0-4341-8f63-e3bd404df413
+2018-09-21 15:41:36.398 [http-nio-8989-exec-2] INFO  c.c.p.p.c.DataTransmissionAndSecurityController - =========生成token对象==========
+2018-09-21 15:41:36.398 [http-nio-8989-exec-2] INFO  c.c.p.p.c.DataTransmissionAndSecurityController - {"AccessToken":"b0915f4d-9ed0-4341-8f63-e3bd404df413","FailReason":0,"OperatorID":"734810352","SuccStat":0,"TokenAvailableTime":3600000}
+2018-09-21 15:41:36.399 [http-nio-8989-exec-2] INFO  c.c.project.platform.common.GenPlatformResult - ========================返回数据：=====================
+2018-09-21 15:41:36.399 [http-nio-8989-exec-2] INFO  c.c.project.platform.common.GenPlatformResult - {"AccessToken":"b0915f4d-9ed0-4341-8f63-e3bd404df413","FailReason":0,"OperatorID":"734810352","SuccStat":0,"TokenAvailableTime":3600000}
+2018-09-21 15:41:36.400 [http-nio-8989-exec-2] INFO  c.c.project.platform.common.GenPlatformResult - 加密数据：TNe6MTKmfdwNzcxYgEqmEcr8ghmc90Xh3/KYF6POucGwOSJT8JaNWJQRo5sIb0b0iC0nft1UTnP/On7Uuo58PaltSJJjx00AmWvXI7DG38z6jgngRNQDApQtZIGTSbp2GU8MZj6QkDlHBWYSOa2iFc7wL7K2p/wrY7+2XzeHShPWgFMT5FML0OBmHvrlg6R1

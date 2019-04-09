@@ -1,0 +1,59 @@
+2018-09-13 15:09:03.536 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>G3bjZFCRgVFYr1EerDk2Y2erCrZSOh0r</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>0BDF88B0C66197BD7B77FD3080CBD198</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 15:09:05.578 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 15:09:24.738 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>4PjMZMwVvSTFkA0QGnqkux8MvtE34ttf</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>26EFB8BFB877C88BFBE919A7BAB60FC6</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 15:09:26.585 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 16:32:22.626 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>jgt8n5l4GYOTkispA43OiicDFFtlVssc</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>606752110947C330D1354CD664EF2560</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 16:36:12.632 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>5EUJFvhhJkLDTiSCGF2ZrXdgBbmRj9bq</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>EEBB8FD83294A6AE478C9F12986F6F62</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 16:38:53.746 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[缺少参数]]></return_msg>
+</xml>
+2018-09-13 16:39:49.758 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[缺少参数]]></return_msg>
+</xml>
+2018-09-13 16:40:17.626 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>Up5f2tea7DvwDxbJQDj4cYmXGuQlcHLM</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>8A6A376DF14266B0EAA3AF3CAD9C011E</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 16:40:22.357 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 16:41:54.996 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>MvlyxFq2ze0zAXtgACEZQnOOEa9dYwn1</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>D58CEED347A21E9C6BAF66BC4ADDDBB1</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 16:41:57.095 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 17:31:36.099 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>tfdKqJ80onNkdbwlz7wkkYZA63EnRonC</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>847FB224EAE48F733042F67E65E75D8D</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 17:31:38.573 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 17:33:52.410 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><appid>wx2421b1c4370ec43b</appid><body>body</body><mch_id>10000100</mch_id><nonce_str>OvTNHOKalvkrbTU7FeMzj0pKz9kiRmIL</nonce_str><out_trade_no>1415659990</out_trade_no><sign>6D8E5BDDB370092ECB0BA8215597B170</sign><spbill_create_ip>192.168.206.1</spbill_create_ip><total_fee>10</total_fee><trade_type>APP</trade_type></xml>
+2018-09-13 17:33:54.200 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 17:35:15.485 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>Oh5eGHhcYIy0Z7JcYe6FqC8OU59FEGO5</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>09C7EA27292A5BA5FB66B834B6B76B9F</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 17:35:18.808 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 17:40:20.852 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 17:52:44.531 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 17:57:18.801 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>
+2018-09-13 18:02:43.266 [main] INFO  com.company.project.app.WXPay.WeiChartUtil - <?xml version="1.0" encoding="UTF-8"?>
+<xml><nonce_str>gjnNsPWkdQAO6bODyen7Fujjnos29EL4</nonce_str><out_trade_no>1415659990</out_trade_no><appid>wx2421b1c4370ec43b</appid><total_fee>10</total_fee><sign>F01F1B729CF06E2EF84CAF650F417B83</sign><trade_type>APP</trade_type><mch_id>10000100</mch_id><body>body</body><spbill_create_ip>192.168.206.1</spbill_create_ip></xml>
+2018-09-13 18:02:45.295 [main] INFO  HttpClientUtil - 得到的结果:<xml><return_code><![CDATA[FAIL]]></return_code>
+<return_msg><![CDATA[签名错误]]></return_msg>
+</xml>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!-- 全局参数 -->
+<settings>
+<!-- 当返回map值时，对于值为null的映射值为null,而不是连字段都没有 -->
+<setting name="callSettersOnNulls" value="true" />
+</settings>
+</configuration>
