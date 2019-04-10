@@ -1,6 +1,7 @@
 package com.company.project.platform.util;
 
 import com.alibaba.fastjson.JSON;
+import com.alibaba.fastjson.JSONObject;
 import com.company.project.platform.common.PlatformRequestBody;
 import com.company.project.platform.common.PlatformResult;
 import com.company.project.platform.config.PlatformConfig;
@@ -21,7 +22,7 @@ import java.util.Map;
  **/
 @Slf4j
 public class PlatformUtil {
-    public static String sendPost(String data,String url,String accessToken){
+    public static PlatformResult sendPost(String data,String url,String accessToken){
 
         log.info("accessToken:"+accessToken);
         HashMap<String, Object> head = new HashMap<>();
@@ -34,7 +35,7 @@ public class PlatformUtil {
         log.info("=======推送对象=======");
         log.info(s1);
         String post = HttpClientUtil.post(PlatformConfig.notificationUrl+url, s1,"json",head);
-        return post;
+        return decryptResult(post);
     }
     public static boolean valid(PlatformRequestBody platformRequestBody){
         String timeStamp = platformRequestBody.getTimeStamp();
@@ -81,4 +82,30 @@ public class PlatformUtil {
         map.put("Sig",platformRequestBody.getSig());
         return  map;
     }*/
+    
+    public static PlatformResult decryptResult(String result) {
+    	PlatformResult p=new PlatformResult();
+    	try {
+    		JSONObject json = JSONObject.parseObject(result);
+    		p=(PlatformResult)JSONObject.toJavaObject(json, PlatformResult.class);
+    		p.setData(AesCBC.decrypt(p.getData()));
+		} catch (Exception e) {
+			log.info("result decrypt failed...");
+		}
+		return p;
+	}
+    
+    public static void main(String[] args) {
+		String str="{\r\n" + 
+				"     \"Ret\": 0,\r\n" + 
+				"     \"Msg\": \"\",\r\n" + 
+				"     \"Data\": \"uxeKP0ezR5yL8xSg4/ZCDh/N91/u86NXFxd2DrwZVW8zCPYcpl59Twz/yQZ3RaO4rDDrGmkvQignmNEJ+k4PGxdmIC+4fpJ8rU6osSobY+AeA0uueuQ5+eQiWBL6p6v5XMMm91brtK8yfFELYUWQzVcxABnAwK/+dyxtUhqLIxUpkwTEU/4ktN40df9IzzlLO5uvUknPGYu9yL0pp5w9vdRxmA1RiiTDNCysz6klr9bunGV3VJa2qpLcgeZMf/oG\",\r\n" + 
+				"     \"Sig\": \"58E52010C7DEE87FE183B0AFA5B2BE30\"\r\n" + 
+				"  }";
+		JSONObject json = JSONObject.parseObject(str);
+		PlatformResult p=(PlatformResult)JSONObject.toJavaObject(json, PlatformResult.class);
+		p.setData(AesCBC.decrypt(p.getData()));
+	    System.err.println(p);
+	}
+    
 }
