@@ -36,4 +36,7 @@ public class PlatformToken {
        String accessToken = stringObjectHashMap.get("AccessToken")+"";
         return accessToken;
     }
+    public static void main(String[] args) {
+		System.err.println(getToken());
+	}
 }
