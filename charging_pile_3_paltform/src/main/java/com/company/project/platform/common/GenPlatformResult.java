@@ -17,6 +17,9 @@ public class GenPlatformResult {
         log.info("========================返回数据：=====================");
         log.info(data);
         PlatformResult platformResult = new PlatformResult();
+
+        
+
         platformResult.setRet(0);
         platformResult.setMsg(PlatformResultCode.SUCCESS_STR);
         try {

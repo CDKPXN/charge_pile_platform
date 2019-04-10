@@ -20,7 +20,7 @@ public class CodeGenerator {
     //JDBC配置，请修改为你项目的实际配置
     private static final String JDBC_URL = "jdbc:mysql://localhost:3306/reconsitution_charging_pile?useSSL=false&characterEncoding=UTF-8";
     private static final String JDBC_USERNAME = "root";
-    private static final String JDBC_PASSWORD = "lds3421597";
+    private static final String JDBC_PASSWORD = "kp0808KP";
     private static final String JDBC_DIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
 
     private static final String PROJECT_PATH = System.getProperty("user.dir");//项目在硬盘上的基础路径
@@ -40,11 +40,11 @@ public class CodeGenerator {
        // genCode("输入表名");
        
      
-        genCodeByCustomModelName("tb_user","User");
+        //genCodeByCustomModelName("tb_user","User");
       /*  genCodeByCustomModelName("tb_charging_order","ChargingOrder");
         genCodeByCustomModelName("tb_car","Car");
         genCodeByCustomModelName("tb_bloc","Bloc");*/
-        
+        genCodeByCustomModelName("tb_rate","Rate");
     }
 
     /**

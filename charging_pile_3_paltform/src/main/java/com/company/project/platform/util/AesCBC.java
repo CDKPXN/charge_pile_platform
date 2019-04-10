@@ -73,8 +73,7 @@ public class AesCBC {
     }
     public static void main(String[] args) throws Exception {
         // 需要加密的字串
-        String cSrc = "{\"total\":1,\"stationStatusInfo\":{\"operationID\":\"123456789\",\"stationID\":\"111111111111111\",\"con\n" +
-                "nectorStatusInfos\":{\"connectorID\":1,\"equipmentID\":\"10000000000000000000001\",\"status\":4, \"currentA\":0,\"currentB\":0,\"currentC\":0,\"voltageA\":0,\"voltageB\":0,\"voltageC\":0,\"soc\":10,}}}";
+        String cSrc = "{\"total\":1,\"stationStatusInfo\":{\"operationID\":\"123456789\",\"stationID\":\"111111111111111\",\"connectorStatusInfos\":{\"connectorID\":1,\"equipmentID\":\"10000000000000000000001\",\"status\":4,\"currentA\":0,\"currentB\":0,\"currentC\":0,\"voltageA\":0,\"voltageB\":0,\"voltageC\":0,\"soc\":10,}}}";
         System.out.println("加密前的字串是："+cSrc);
         // 加密
         String enString = AesCBC.getInstance().encrypt(cSrc,"utf-8",PlatformConfig.sKey,PlatformConfig.ivParameter);

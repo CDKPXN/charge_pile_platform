@@ -81,4 +81,13 @@ public class PlatformUtil {
         map.put("Sig",platformRequestBody.getSig());
         return  map;
     }*/
+    
+   /* 
+    public static void main(String []args) {
+    	String requestParam= "{name:fds,age:123}";
+    	String url = "www.baidu.com";
+    	String accessToken= "accessToken";
+    	String sendPost = PlatformUtil.sendPost(requestParam, url, accessToken);
+    	
+    }*/
 }
