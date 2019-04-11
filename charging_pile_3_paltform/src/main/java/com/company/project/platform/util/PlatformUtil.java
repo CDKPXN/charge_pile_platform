@@ -22,11 +22,11 @@ import java.util.Map;
  **/
 @Slf4j
 public class PlatformUtil {
-    public static PlatformResult sendPost(String data,String url,String accessToken){
+    public static PlatformResult sendPost(String data,String url){
 
-        log.info("accessToken:"+accessToken);
+        log.info("accessToken:"+PlatformToken.AccessToken);
         HashMap<String, Object> head = new HashMap<>();
-        head.put("Authorization",("Bearer "+accessToken).replaceAll("\r","").replaceAll("\n",""));
+        head.put("Authorization",("Bearer "+PlatformToken.AccessToken).replaceAll("\r","").replaceAll("\n",""));
         log.info("=======推送数据=======");
         log.info(data);
         PlatformRequestBody platformRequestBody = new PlatformRequestBody(data);

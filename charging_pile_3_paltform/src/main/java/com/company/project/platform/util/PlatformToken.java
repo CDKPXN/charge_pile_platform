@@ -16,8 +16,11 @@ import java.util.HashMap;
  **/
 @Slf4j
 public class PlatformToken {
-
-    public static String getToken(){
+    
+	public static String AccessToken="";
+	
+	
+    public  static void getToken(){
         String Data = "{\"OperatorID\":\""+PlatformConfig.OperatorID+"\",\"OperatorSecret\":\""+PlatformConfig.OperatorSecret+"\"}";
         PlatformRequestBody platformRequestBody = new PlatformRequestBody(Data);
       //  Map<String, String> map = PlatformUtil.formatMap(platformRequestBody);
@@ -32,11 +35,11 @@ public class PlatformToken {
         }
         token = AesCBC.decrypt(token);
         HashMap<String, Object> stringObjectHashMap = JsonUtil_My.toMap(token);
-        if(stringObjectHashMap == null) return null;
-       String accessToken = stringObjectHashMap.get("AccessToken")+"";
-        return accessToken;
+        if(stringObjectHashMap == null) AccessToken="";
+        AccessToken = stringObjectHashMap.get("AccessToken")+"";
     }
     public static void main(String[] args) {
-		System.err.println(getToken());
+    	getToken();
+		System.err.println(AccessToken);
 	}
 }

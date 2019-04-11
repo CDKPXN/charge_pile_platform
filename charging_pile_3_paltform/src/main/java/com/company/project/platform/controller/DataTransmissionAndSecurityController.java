@@ -24,8 +24,7 @@ public class DataTransmissionAndSecurityController {
 
     @GetMapping
     public String query_token() {
-        String token = PlatformToken.getToken();
-        return token;
+        return PlatformToken.AccessToken;
     }
 
     @PostMapping("/query_token")
