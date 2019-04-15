@@ -68,6 +68,8 @@ public class AesCBC {
     }
     public static String encrypt(String cSrc) throws Exception {
     	cSrc=cSrc.replaceAll("\r","").replaceAll("\n","").replace(" ", "");
+//    	System.err.println("------------加密字符串----------------");
+//    	System.err.println(cSrc);
         String encrypt = getInstance().encrypt(cSrc, "utf-8", PlatformConfig.sKey, PlatformConfig.ivParameter);
         return encrypt;
     }

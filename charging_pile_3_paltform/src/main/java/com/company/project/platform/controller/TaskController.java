@@ -3,6 +3,8 @@ package com.company.project.platform.controller;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
+import com.company.project.platform.util.PlatformToken;
+
 import lombok.extern.slf4j.Slf4j;
 
 
@@ -24,6 +26,7 @@ public class TaskController {
 	    @Scheduled(fixedRate = 1000*60*60)   
 	    public void getToken(){
 	    	log.info("---定时任务---");
+	    	//PlatformToken.getToken();
 	    }
 	    
 	    /**  
