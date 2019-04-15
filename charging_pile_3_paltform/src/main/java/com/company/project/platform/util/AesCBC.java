@@ -67,9 +67,9 @@ public class AesCBC {
         return decrypt;
     }
     public static String encrypt(String cSrc) throws Exception {
-
+    	cSrc=cSrc.replaceAll("\r","").replaceAll("\n","").replace(" ", "");
         String encrypt = getInstance().encrypt(cSrc, "utf-8", PlatformConfig.sKey, PlatformConfig.ivParameter);
-        return encrypt.replaceAll("\r","").replaceAll("\n","");
+        return encrypt;
     }
     public static void main(String[] args) throws Exception {
         // 需要加密的字串
