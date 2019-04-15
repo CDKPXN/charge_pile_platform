@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.PileMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Pile">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="num" jdbcType="VARCHAR" property="num" />
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+    <result column="qr_code" jdbcType="VARCHAR" property="qrCode" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="image" jdbcType="VARCHAR" property="image" />
+    <result column="adv" jdbcType="VARCHAR" property="adv" />
+    <result column="fid" jdbcType="VARCHAR" property="fid" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
+    <result column="type" jdbcType="INTEGER" property="type" />
+    <result column="electric_quantity" jdbcType="DOUBLE" property="electricQuantity" />
+    <result column="voltage" jdbcType="DOUBLE" property="voltage" />
+    <result column="electricity" jdbcType="DOUBLE" property="electricity" />
+    <result column="is_del" jdbcType="INTEGER" property="isDel" />
+    <result column="hgid" jdbcType="INTEGER" property="hgid" />
+    <result column="cprice" jdbcType="INTEGER" property="cprice" />
+    <result column="sprice" jdbcType="INTEGER" property="sprice" />
+    <result column="set_value" jdbcType="BIGINT" property="setValue" />
+    <result column="duration" jdbcType="INTEGER" property="duration" />
+    <result column="ctype" jdbcType="INTEGER" property="ctype" />
+  </resultMap>
+  
+  <insert id="addPile" parameterType="com.company.project.model.Pile">
+  		insert into tb_pile(sid,name,type,voltage,electricity,connect_id) 
+  		  values(#{sid},#{name},#{type},#{voltage},#{electricity},#{connect_id})
+  </insert>
+</mapper>

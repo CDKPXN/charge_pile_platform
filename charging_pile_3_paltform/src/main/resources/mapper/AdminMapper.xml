@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Admin">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="role" jdbcType="INTEGER" property="role" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="phone" jdbcType="VARCHAR" property="phone" />
+    <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
+  </resultMap>
+  
+  <select id="findByUsername" resultType="com.company.project.model.Admin">
+  		select * from tb_admin where username = #{op}
+  </select>
+  
+  <insert id="addAdmin" parameterType="com.company.project.model.Admin">
+  		insert into tb_admin(username,password,role,ctime) values(#{username},#{password},#{role},#{ctime})
+  </insert>
+</mapper>
