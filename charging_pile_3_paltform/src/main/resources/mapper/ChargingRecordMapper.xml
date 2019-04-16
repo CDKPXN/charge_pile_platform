@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.ChargingRecordMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.ChargingRecord">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <result column="oid" jdbcType="BIGINT" property="oid" />
+    <result column="voltage" jdbcType="DOUBLE" property="voltage" />
+    <result column="current" jdbcType="DOUBLE" property="current" />
+    <result column="amount" jdbcType="DOUBLE" property="amount" />
+    <result column="battery_mode" jdbcType="VARCHAR" property="batteryMode" />
+    <result column="battery_type" jdbcType="VARCHAR" property="batteryType" />
+    <result column="r_capacity" jdbcType="DOUBLE" property="rCapacity" />
+    <result column="r_voltage" jdbcType="DOUBLE" property="rVoltage" />
+    <result column="max_bms_voltage" jdbcType="DOUBLE" property="maxBmsVoltage" />
+    <result column="max_bms_current" jdbcType="DOUBLE" property="maxBmsCurrent" />
+    <result column="battery_tmax" jdbcType="INTEGER" property="batteryTmax" />
+    <result column="battery_voltage" jdbcType="DOUBLE" property="batteryVoltage" />
+    <result column="v_need" jdbcType="DOUBLE" property="vNeed" />
+    <result column="c_need" jdbcType="DOUBLE" property="cNeed" />
+    <result column="charging_v" jdbcType="DOUBLE" property="chargingV" />
+    <result column="charging_c" jdbcType="DOUBLE" property="chargingC" />
+    <result column="vout" jdbcType="DOUBLE" property="vout" />
+    <result column="cout" jdbcType="DOUBLE" property="cout" />
+    <result column="soc" jdbcType="VARCHAR" property="soc" />
+    <result column="r_time" jdbcType="INTEGER" property="rTime" />
+    <result column="ctime" jdbcType="TIMESTAMP" property="ctime" />
+  </resultMap>
+</mapper>

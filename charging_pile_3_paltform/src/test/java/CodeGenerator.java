@@ -40,7 +40,7 @@ public class CodeGenerator {
        // genCode("输入表名");
        
      
-        genCodeByCustomModelName("tb_charging_order","ChargingOrder");
+        genCodeByCustomModelName("tb_charging_record","ChargingRecord");
         /*  genCodeByCustomModelName("tb_charging_order","ChargingOrder");
         genCodeByCustomModelName("tb_car","Car");
         genCodeByCustomModelName("tb_bloc","Bloc");*/

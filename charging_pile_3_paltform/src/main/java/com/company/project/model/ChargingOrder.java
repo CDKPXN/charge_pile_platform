@@ -108,8 +108,19 @@ public class ChargingOrder {
     private Integer hdBalance;
 
     private String djhm;
+    
+    @Column(name = "charge_seq")
+    private String chargeSeq;
 
-    /**
+    public String getChargeSeq() {
+		return chargeSeq;
+	}
+
+	public void setChargeSeq(String chargeSeq) {
+		this.chargeSeq = chargeSeq;
+	}
+
+	/**
      * @return id
      */
     public Long getId() {
