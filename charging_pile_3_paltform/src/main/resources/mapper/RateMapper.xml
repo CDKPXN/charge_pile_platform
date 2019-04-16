@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.company.project.dao.RateMapper">
+  <resultMap id="BaseResultMap" type="com.company.project.model.Rate">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="e_id" jdbcType="INTEGER" property="eId" />
+    <result column="rate" jdbcType="VARCHAR" property="rate" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+  </resultMap>
+  
+  <insert id="addRate" parameterType="com.company.project.model.Rate">
+  		insert into tb_rate(e_id,rate,creat_time) values(#{eid},#{rate},#{creatTime})
+  </insert>
+</mapper>
