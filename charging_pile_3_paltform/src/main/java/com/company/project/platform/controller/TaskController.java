@@ -12,6 +12,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.company.project.platform.common.PlatformResult;
 import com.company.project.platform.model.EquipmentInfo;
 import com.company.project.platform.model.StationInfo;
+import com.company.project.platform.util.PlatformToken;
 import com.company.project.platform.util.PlatformUtil;
 import com.company.project.service.AdminService;
 import com.company.project.service.PileService;
@@ -49,6 +50,7 @@ public class TaskController {
 	    @Scheduled(fixedRate = 1000*60*60)   
 	    public void getToken(){
 	    	log.info("---定时任务---");
+	    	PlatformToken.getToken();
 	    }
 	    
 	    /**  

@@ -35,7 +35,10 @@ public class PlatformToken {
         }
         token = AesCBC.decrypt(token);
         HashMap<String, Object> stringObjectHashMap = JsonUtil_My.toMap(token);
-        if(stringObjectHashMap == null) AccessToken="";
+        if(stringObjectHashMap == null) {
+        	 AccessToken="";
+        	 return;
+        }
         AccessToken = stringObjectHashMap.get("AccessToken")+"";
     }
     public static void main(String[] args) {
