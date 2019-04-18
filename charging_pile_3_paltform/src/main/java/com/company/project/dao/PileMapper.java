@@ -7,5 +7,8 @@ import com.company.project.model.Pile;
 
 public interface PileMapper extends Mapper<Pile> {
 
-	void addPile(@Param("pile")Pile pile);
+
+	Pile findByConnectorId(@Param("cid")String cid);
+
+	void updatePile(@Param("pile")Pile pile);
 }

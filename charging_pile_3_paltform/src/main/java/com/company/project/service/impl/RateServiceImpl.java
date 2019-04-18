@@ -36,7 +36,7 @@ public class RateServiceImpl extends AbstractService<Rate> implements RateServic
 		String rateString = subRate(ef,sf);
 		rate.setRate(rateString);
 		
-	    tbRateMapper.addRate(rate);
+		tbRateMapper.insert(rate);
 	}
 	
 	public String subRate(String ef,String sf) {
