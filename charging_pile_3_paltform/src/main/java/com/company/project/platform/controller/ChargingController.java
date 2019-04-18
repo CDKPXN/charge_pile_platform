@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.alibaba.fastjson.JSON;
@@ -60,11 +61,10 @@ public class ChargingController {
 	 * @param json
 	 * @return
 	 */
-	@PostMapping("/charging/qrCode")
-    public Result qrCode(@RequestBody JSONObject json) {
+	@GetMapping("/charging/qrCode")
+    public Result qrCode(@RequestParam String ConnectorID) {
 		JSONObject data=new JSONObject();
 		data.put("EquipAuthSeq", PlatformConfig.OperatorID+CommonBh.getOrderIdByUUId());
-		String ConnectorID=json.getString("ConnectorID");
 		if(StringUtils.isBlank(ConnectorID)) {
 			return ResultGenerator.genFailResult("电桩不可用");
 		}
