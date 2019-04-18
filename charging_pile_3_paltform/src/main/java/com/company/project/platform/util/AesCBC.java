@@ -75,17 +75,19 @@ public class AesCBC {
     }
     public static void main(String[] args) throws Exception {
         // 需要加密的字串
-        String cSrc = "{\"total\":1,\"stationStatusInfo\":{\"operationID\":\"123456789\",\"stationID\":\"111111111111111\",\"con\n" +
-                "nectorStatusInfos\":{\"connectorID\":1,\"equipmentID\":\"10000000000000000000001\",\"status\":4, \"currentA\":0,\"currentB\":0,\"currentC\":0,\"voltageA\":0,\"voltageB\":0,\"voltageC\":0,\"soc\":10,}}}";
-        System.out.println("加密前的字串是："+cSrc);
-        // 加密
-        String enString = AesCBC.getInstance().encrypt(cSrc,"utf-8",PlatformConfig.sKey,PlatformConfig.ivParameter);
-        System.out.println("加密后的字串是："+ enString);
+        String cSrc = "Glr/HxHB/qS9mnFe4R6ZoBs6Mj3DCCEC5+3zfDYvgpt/Qht5nspMUUBxjS10WS74ESWunl+yzTJU1ufPeDhGn4jbAr0BTm8oGGUSDWS2ogV7dl7DyuxbJsbucypTO6QBpgwJH0FGhlYMTPI6P5d22QngyVyfQuN42W45DXJoAxWYyHH5tP6MYKB7LQQUQuO+5Fit6CcVgAC/bC26c/zlYor8XD4ZT4mbFX0qy+eAZaZaALK+0/KiXx8yvvPv7HRQ1ocS/2UnISB81WZpSBMPi1duQzAmcEGIGfKNhWT4wH4=";
+//        System.out.println("加密前的字串是："+cSrc);
+//        // 加密
+//        String enString = AesCBC.getInstance().encrypt(cSrc,"utf-8",PlatformConfig.sKey,PlatformConfig.ivParameter);
+//        System.out.println("加密后的字串是："+ enString);
+//
+//        System.out.println("1jdzWuniG6UMtoa3T6uNLA==".equals(enString));
+//
+//        // 解密
+//        String DeString = AesCBC.getInstance().decrypt(enString,"utf-8",PlatformConfig.sKey,PlatformConfig.ivParameter);
+//        System.out.println("解密后的字串是：" + DeString);
+        System.err.println(AesCBC.decrypt(cSrc));
 
-        System.out.println("1jdzWuniG6UMtoa3T6uNLA==".equals(enString));
-
-        // 解密
-        String DeString = AesCBC.getInstance().decrypt(enString,"utf-8",PlatformConfig.sKey,PlatformConfig.ivParameter);
-        System.out.println("解密后的字串是：" + DeString);
     }
+    
 }

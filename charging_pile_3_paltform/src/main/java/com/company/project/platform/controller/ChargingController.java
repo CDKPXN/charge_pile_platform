@@ -79,16 +79,18 @@ public class ChargingController {
 		data0.put("StationIDs", StationIDs);
 		try {
 			//请求设备状态
-			PlatformResult p0=PlatformUtil.sendPost(data0.toJSONString(), "query_station_status");
-			JSONObject result0= JSONObject.parseObject(p0.getData());
+			//PlatformResult p0=PlatformUtil.sendPost(data0.toJSONString(), "query_station_status");
+			//JSONObject result0= JSONObject.parseObject(p0.getData());//真是数据
+			JSONObject result0= JSONObject.parseObject("{\"StationStatusInfos\": [{\"StationID\": \"3702120022101\",\"ConnectorStatusInfos\": [{\"ConnectorID\": \"1\",\"Status\": 2}]}],\"Total\": 2}");//模拟数据
 			JSONArray array= result0.getJSONArray("StationStatusInfos");
 			JSONArray Connector=JSONObject.parseObject(array.get(0).toString()).getJSONArray("ConnectorStatusInfos");
 			for (Object object : Connector) {
 				JSONObject js=JSONObject.parseObject(object.toString());
 				if(js.getInteger("Status")==2&&ConnectorID.equals(js.getString("ConnectorID"))) {
 					//认证设备
-					PlatformResult p=PlatformUtil.sendPost(data.toJSONString(), "query_equip_auth");
-					JSONObject result= JSONObject.parseObject(p.getData());
+					//PlatformResult p=PlatformUtil.sendPost(data.toJSONString(), "query_equip_auth");
+					//JSONObject result= JSONObject.parseObject(p.getData());//真实数据
+					JSONObject result= JSONObject.parseObject("{\"EquipAuthSeq\": \"123456789201805071630123456\",\"ConnectorID\": \"3702120244102\",\"FailReason\": 0,\"SuccStat\": 0}");//模拟数据
 					if(result.getInteger("SuccStat")==0) {
 						return ResultGenerator.genSuccessResult();
 					}else {
@@ -112,8 +114,10 @@ public class ChargingController {
 	 */
 	@PostMapping("/start_charging")
     public Result set_charging(@RequestBody JSONObject json,HttpServletRequest request) {
+		System.err.println(request.getHeader("token"));
 		String id = JavaWebToken.parserStaffIdByToken(request);
-		User user=userService.findById(Integer.parseInt(id));
+		System.err.println(id);
+		User user=userService.findBy("id", Long.parseLong(id));
 		Long value=json.getLong("value");
 		Integer models=json.getInteger("model");
 		String ConnectorID=json.getString("ConnectorID");
@@ -134,8 +138,11 @@ public class ChargingController {
 		model.setModel(models);
 		model.setPid(pile.getId());
 		model.setSetValue(value);
+		model.setStatus(1);
+		model.setUid(user.getId());
 		model.setBalance(user.getBalance());
 		chargingOrderService.save(model);
+		System.err.println("充电订单号 : "+cq);
 		//开始充电
 		JSONObject data=new JSONObject();
 		data.put("StartChargeSeq", cq);
@@ -143,17 +150,18 @@ public class ChargingController {
 		data.put("QRCode", QRCode);
 		data.put("PhoneNum", PhoneNum);
 		try {
-			PlatformResult p=PlatformUtil.sendPost(data.toJSONString(), "query_start_charge_with_phone_num");
-			JSONObject result= JSONObject.parseObject(p.getData());
+			//PlatformResult p=PlatformUtil.sendPost(data.toJSONString(), "query_start_charge_with_phone_num");
+			//JSONObject result= JSONObject.parseObject(p.getData());
+			JSONObject result= JSONObject.parseObject(" {\"StartChargeSeqStat\": 1,\"StartChargeSeq\": \""+cq+"\",\"ConnectorID\": \"1\",\"SuccStat\": 0,\"FailReason\": 0}");//模拟数据
 			if(result.getInteger("SuccStat")==0) {
 				return ResultGenerator.genSuccessResult(model.getId());
-			}else {
-				return ResultGenerator.genFailResult("启动失败");
 			}
 		} catch (Exception e) {
 			log.info("query start charge failed : "+e.getMessage());
-			return ResultGenerator.genFailResult("请求超时");
 		}
+		model.setStatus(3);
+		chargingOrderService.update(model);
+		return ResultGenerator.genFailResult("启动失败");
 		
     }
 	
@@ -172,6 +180,8 @@ public class ChargingController {
 		
 		PlatformResult params=PlatformUtil.decryptResult(json.toString());
 		JSONObject result= JSONObject.parseObject(params.getData());
+		//JSONObject result= JSONObject.parseObject("{\"StartChargeSeq\":\"123456789643000001394449368\",\"StartChargeSeqStat\":2,\"StartTime\":\"2019-04-17 06:54:08\",\"ConnectorID\":\"1\"}");
+		System.err.println("充电启动结果:"+result);
 		String StartChargeSeq=result.getString("StartChargeSeq");
 		Integer StartChargeSeqStat=result.getInteger("StartChargeSeqStat");
 		//String ConnectorID=result.getString("ConnectorID");
@@ -187,9 +197,10 @@ public class ChargingController {
 		//订单信息
 		ChargingOrder order=chargingOrderService.findBy("chargeSeq", StartChargeSeq);
 		if(order==null) {
+		    log.info("order chargeSeq("+StartChargeSeq+") is not exist");
 			return failed;
 		}
-		order.setBeginTime(DateUtils.getDateFormat(StartTime));
+		order.setBeginTime(DateUtils.getDateTimeFormat(StartTime));
 		order.setStatus(1);
 		chargingOrderService.update(order);
 		return success;
@@ -205,19 +216,51 @@ public class ChargingController {
 	@PostMapping("/charging")
     public Result charging(@RequestBody JSONObject json) {
 		String oid=json.getString("oid");
-		ChargingOrder order=chargingOrderService.findBy("id", oid);
+		ChargingOrder order=chargingOrderService.findBy("id", Long.parseLong(oid));
 		//请求实时充电状态
 		JSONObject data=new JSONObject();
 		data.put("StartChargeSeq", order.getChargeSeq());
 		try {
-			PlatformResult p=PlatformUtil.sendPost(data.toJSONString(), "query_equip_charge_status");
-			JSONObject result= JSONObject.parseObject(p.getData());
+			//PlatformResult p=PlatformUtil.sendPost(data.toJSONString(), "query_equip_charge_status");
+			//JSONObject result= JSONObject.parseObject(p.getData());
+			String ss="{\r\n" + 
+					"        \"StartChargeSeqStat\": 2,\r\n" + 
+					"        \"StartChargeSeq\": \"123456789643000001394449368\",\r\n" + 
+					"        \"ConnectorID\": \"1\",\r\n" + 
+					"        \"ConnectorStatus\": 3,\r\n" + 
+					"        \"CurrentA\": 78.1,\r\n" + 
+					"        \"CurrentB\": 0.0,\r\n" + 
+					"        \"CurrentC\": 0.0,\r\n" + 
+					"        \"VoltageA\": 575.3,\r\n" + 
+					"        \"VoltageB\": 0.0,\r\n" + 
+					"        \"VoltageC\": 0.0,\r\n" + 
+					"        \"Soc\": 5.0,\r\n" + 
+					"        \"StartTime\": \"2019-04-17 06:54:08\",\r\n" + 
+					"        \"EndTime\": \"2019-04-17 06:59:08\",\r\n" + 
+					"        \"TotalPower\": 3.54,\r\n" + 
+					"        \"ElecMoney\": 4.956,\r\n" + 
+					"        \"SeviceMoney\": 0.0,\r\n" + 
+					"        \"TotalMoney\": 4.956,\r\n" + 
+					"        \"SumPeriod\": 1,\r\n" + 
+					"        \"ChargeDetails\": [\r\n" + 
+					"          {\r\n" + 
+					"              \"DetailStartTime\": \"2019-04-17 06:54:08\",\r\n" + 
+					"              \"DetailEndTime\": \"2019-04-17 06:59:08\",\r\n" + 
+					"              \"ElecPrice\": 1.4,\r\n" + 
+					"              \"SevicePrice\": 0.0,\r\n" + 
+					"              \"DetailPower\": 3.54,\r\n" + 
+					"              \"DetailElecMoney\": 4.956,\r\n" + 
+					"              \"DetailSeviceMoney\": 0.0\r\n" + 
+					"          }\r\n" + 
+					"          ]\r\n" + 
+					"  }";
+			JSONObject result= JSONObject.parseObject(ss);
 			//更新订单
 			order.setElectricQuantity(result.getDouble("TotalPower"));
 			order.setCprice(result.getDouble("ElecMoney")*100);
 			order.setSprice(result.getDouble("SeviceMoney")*100);
-			int duration=DateUtils.diffDateSecond(DateUtils.getDateFormat(result.getString("StartTime")), 
-					DateUtils.getDateFormat(result.getString("EndTime")));
+			int duration=DateUtils.diffDateSecond(DateUtils.getDateTimeFormat(result.getString("StartTime")), 
+					DateUtils.getDateTimeFormat(result.getString("EndTime")));
 			order.setDuration(duration);
 			chargingOrderService.update(order);
 			//更新电桩
@@ -239,7 +282,8 @@ public class ChargingController {
 			chargingRecordService.save(cr);
 			//结算判断
 			ChargingController cc=new ChargingController();
-			int res=cc.judge(order);
+			User user=userService.findBy("id", order.getUid());
+			int res=cc.judge(order,user);
 			if(res==1) {
 				//发起停止充电请求
 				JSONObject data0=new JSONObject();
@@ -289,8 +333,8 @@ public class ChargingController {
 		JSONObject result= JSONObject.parseObject(params.getData());
 		String StartChargeSeq=result.getString("StartChargeSeq");
 		String ConnectorID=result.getString("ConnectorID");
-		Date StartTime=DateUtils.getDateFormat(result.getString("StartTime"));
-		Date EndTime=DateUtils.getDateFormat(result.getString("EndTime"));
+		Date StartTime=DateUtils.getDateTimeFormat(result.getString("StartTime"));
+		Date EndTime=DateUtils.getDateTimeFormat(result.getString("EndTime"));
 		JSONObject res=new JSONObject();
 		res.put("StartChargeSeq",StartChargeSeq);
 		res.put("ConnectorID",ConnectorID);
@@ -330,22 +374,25 @@ public class ChargingController {
 	 * @return
 	 * 0停止充电1正常
 	 */
-	public int judge(ChargingOrder order) {
+	public int judge(ChargingOrder order,User user) {
 		//余额小于1块主动停止
-		User user=userService.findById(Integer.parseInt(order.getUid()+""));
 		if(user.getBalance()<(order.getCprice()+order.getSprice()+100)) {
+			log.info("余额不足主动停止充电");
 			return 1;
 		}
 		//定时提前60秒
 		if(order.getModel()==1&&(order.getDuration()+60)>=order.getSetValue()) {
+			log.info("定时主动停止充电");
 			return 1;
 		}
 		//定电量提前一度电
 		if(order.getModel()==2&&(order.getElectricQuantity()+1)>=order.getSetValue()) {
+			log.info("定电量主动停止充电");
 			return 1;
 		}
 		//定金额提前1块
 		if(order.getModel()==3&&(order.getSetValue()+100)>=(order.getCprice()+order.getSprice())) {
+			log.info("定金额主动停止充电");
 			return 1;
 		}
 		return 0;
