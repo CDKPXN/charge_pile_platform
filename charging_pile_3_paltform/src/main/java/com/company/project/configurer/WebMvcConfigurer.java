@@ -166,7 +166,7 @@ public class WebMvcConfigurer extends WebMvcConfigurerAdapter {
             })
             .excludePathPatterns("/api/auth","/app","/app/auth","/app/chargingNet","/app/personalCenter/rechargeOrder/status"
             ,"/app/siteAuxiliary/site/*/chargingRecord","/api/h5pay/notifyUrl","/api/h5pay/returnUrl"
-            ,"/app/personalCenter/password/update","/evcs/20160701/*");
+            ,"/app/personalCenter/password/update","/evcs/20160701/**");
     }
 
     private void responseResult(HttpServletResponse response, Result result) {

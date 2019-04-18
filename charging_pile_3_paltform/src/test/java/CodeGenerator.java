@@ -18,7 +18,7 @@ import static com.company.project.core.ProjectConstant.*;
  */
 public class CodeGenerator {
     //JDBC配置，请修改为你项目的实际配置
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/reconsitution_charging_pile?useSSL=false&characterEncoding=UTF-8";
+    private static final String JDBC_URL = "jdbc:mysql://106.75.154.242:3306/reconsitution_charging_pile?useSSL=false&characterEncoding=UTF-8";
     private static final String JDBC_USERNAME = "root";
     private static final String JDBC_PASSWORD = "kp0808KP";
     private static final String JDBC_DIVER_CLASS_NAME = "com.mysql.jdbc.Driver";
@@ -40,8 +40,8 @@ public class CodeGenerator {
        // genCode("输入表名");
        
      
-        genCodeByCustomModelName("tb_admin","Admin");
-      /*  genCodeByCustomModelName("tb_charging_order","ChargingOrder");
+        genCodeByCustomModelName("tb_charging_record","ChargingRecord");
+        /*  genCodeByCustomModelName("tb_charging_order","ChargingOrder");
         genCodeByCustomModelName("tb_car","Car");
         genCodeByCustomModelName("tb_bloc","Bloc");*/
         
