@@ -18,6 +18,10 @@ public class ChargingOrder {
      * 用户id
      */
     private Long uid;
+    
+  
+    private Integer operator;
+    
 
     /**
      * 电量
@@ -525,4 +529,15 @@ public class ChargingOrder {
     public void setDjhm(String djhm) {
         this.djhm = djhm;
     }
+
+	public Integer getOperator() {
+		return operator;
+	}
+
+	public void setOperator(Integer operator) {
+		this.operator = operator;
+	}
+    
+    
+    
 }

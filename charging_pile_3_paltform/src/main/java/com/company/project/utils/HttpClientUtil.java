@@ -71,7 +71,7 @@ public class HttpClientUtil {
             s.setContentEncoding("UTF-8");
             s.setContentType("application/json");//发送json数据需要设置contentType
             put.setEntity(s);
-            
+            put.setHeader("token", "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIyIiwicGhvbmUiOiIxNTA4MjgxMjI0NSIsInRpbWVTdHJpbmciOiIxNTU1NzIyMzgwMTQwIiwiaWF0IjoxNTU1NzIyMzgwfQ.oCptYv7rBpkSg3x4nN41ZYp1kuWhXNbtwYlGGYY2Z1o");
 
 
             RequestConfig requestConfig = RequestConfig.custom()  

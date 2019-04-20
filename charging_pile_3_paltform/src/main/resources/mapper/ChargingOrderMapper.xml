@@ -31,5 +31,6 @@
     <result column="hd_balance" jdbcType="INTEGER" property="hdBalance" />
     <result column="djhm" jdbcType="VARCHAR" property="djhm" />
     <result column="charge_seq" jdbcType="VARCHAR" property="ChargeSeq" />
+    <result column="operator" jdbcType="INTEGER" property="operator" />
   </resultMap>
 </mapper>

@@ -76,16 +76,17 @@ public class DateUtils {
      * @return
      */
     public static int diffDateSecond(Date date0,Date date1) {
-    	Calendar calendar = Calendar.getInstance();
-    	calendar.setTime(date0);
-    	int seconds0=calendar.get(Calendar.SECOND);
-    	calendar.setTime(date1);
-    	int seconds1=calendar.get(Calendar.SECOND);
-    	int diff=seconds0-seconds1;
-    	if(diff<0) {
-    		diff=-diff;
-    	}
-        return diff;
+    	try {
+    		long diff=date0.getTime()-date1.getTime();
+        	if(diff<0) {
+        		diff=-diff;
+        	}
+            return (int)(diff/1000);
+		} catch (Exception e) {
+			e.printStackTrace();
+			return 0;
+		}
+    	
     }
 
     /**
