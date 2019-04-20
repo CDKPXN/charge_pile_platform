@@ -374,7 +374,6 @@ public class ChargingController {
 		order.setElectricQuantity(result.getDouble("TotalPower"));
 		order.setCprice(result.getDouble("TotalElecMoney")*100);
 		order.setSprice(result.getDouble("TotalSeviceMoney")*100);
-		order.setStatus(3);
 		order.setDuration(duration);
 		chargingOrderService.update(order);
 		//用户余额结算
