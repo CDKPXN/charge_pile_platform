@@ -9,6 +9,8 @@ import com.company.project.core.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 
@@ -24,29 +26,62 @@ public class PileServiceImpl extends AbstractService<Pile> implements PileServic
 	@Override
 	public void addPile(JSONArray equipmentArray,int id) {
 		
-		Pile pile = new Pile();
-		
 		for (int i = 0; i < equipmentArray.size(); i++) {
 			JSONObject eachEquipment = (JSONObject) equipmentArray.get(i);
 			JSONArray ConnectorArray = (JSONArray) eachEquipment.get("ConnectorInfos");
-			
 			for (int j = 0; j < ConnectorArray.size(); j++) {
-				JSONObject eachConnector = (JSONObject) ConnectorArray.get(i);
-				
-				pile.setId(id);
-				pile.setConnectorId((String) eachConnector.get("ConnectorId"));
-				pile.setName((String) eachConnector.get("ConnectorName"));
-				pile.setVoltage((Double) eachConnector.get("VoltageLowerLimits"));
-				pile.setElectricity((Double) eachConnector.get("Current"));
-				
-				float power = (float) eachConnector.get("Power");
-				if(power > 7.0) {
-					pile.setType(0);
+				Pile pile = new Pile();
+				JSONObject eachConnector = (JSONObject) ConnectorArray.get(j);
+				String connectorId = (String) eachConnector.get("ConnectorID");
+				pile.setConnectorId(connectorId);
+				Pile select  =  tbPileMapper.selectOne(pile);
+				if(select != null) {
+					Pile p1 = select;
+					p1.setSid(id);
+					p1.setName((String) eachConnector.get("ConnectorName"));
+					int vo = (int)eachConnector.get("VoltageLowerLimits");
+					p1.setVoltage((double)vo);
+					
+					int current = (int)eachConnector.get("Current");
+					p1.setElectricity((double)current );
+					
+					Object p = eachConnector.get("Power");
+					float power=Float.parseFloat(p.toString());
+					if(power > 7.0) {
+						p1.setType(0);
+					}else {
+						p1.setType(1);
+					}
+					p1.setCtype(0);
+					tbPileMapper.updateByPrimaryKeySelective(pile);
+					
 				}else {
-					pile.setType(1);
+					Pile p2 = new Pile();
+					p2.setSid(id);
+					p2.setConnectorId(connectorId);
+					p2.setName((String) eachConnector.get("ConnectorName"));
+					
+					int vo = (int)eachConnector.get("VoltageLowerLimits");
+					p2.setVoltage((double)vo);
+					
+					int current = (int)eachConnector.get("Current");
+					p2.setElectricity((double)current );
+					
+					Object p = eachConnector.get("Power");
+					float power=Float.parseFloat(p.toString());
+					if(power > 7.0) {
+						p2.setType(0);
+					}else {
+						p2.setType(1);
+					}
+					p2.setCtype(0);
+					tbPileMapper.insert(p2);
 				}
 				
-				tbPileMapper.addPile(pile);
+				
+				
+				
+				
 				
 			}
 			

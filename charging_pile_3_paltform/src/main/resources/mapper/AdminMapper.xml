@@ -19,6 +19,6 @@
   </select>
   
   <insert id="addAdmin" parameterType="com.company.project.model.Admin">
-  		insert into tb_admin(username,password,role,ctime) values(#{username},#{password},#{role},#{ctime})
+  		insert into tb_admin(username,password,role,ctime) values(#{ad.username},#{ad.password},#{ad.role},#{ad.ctime})
   </insert>
 </mapper>

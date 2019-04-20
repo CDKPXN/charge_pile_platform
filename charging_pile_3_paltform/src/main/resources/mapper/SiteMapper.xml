@@ -26,19 +26,13 @@
     <result column="station_id" jdbcType="VARCHAR" property="stationId" />
   </resultMap>
   
-  <insert id="addStation" parameterType="com.company.project.model.Site"
-           keyProperty="id" useGeneratedKeys="true">
-  		insert into tb_site(uid,province,city,district,addr,longitude,latitude,name,parking_fee,station_id)
-  		values(#{uid},#{province},#{city},#{district},#{addr},#{longitude},#{latitude},#{name},#{parkingFee},#{stationId})
-  </insert>
-  
   <select id="fandByStationId" parameterType="String" resultType="com.company.project.model.Site">
   		select * from tb_site where station_id = #{stationId}
   </select>
   
   <update id="updateStationId" useGeneratedKeys="true" keyProperty="id" parameterType="com.company.project.model.Site">
-        update tb_site set uid = #{uid},province = #{province},city = #{city},district = #{district},addr = #{addr},
-                longitude = #{longitude},latitude = #{latitude},name= #{name},parking_fee = #{parkingFee}
-        where station_id = #{stationId}
+        update tb_site set uid = #{site.uid},province = #{site.province},city = #{site.city},district = #{site.district},addr = #{site.addr},
+                longitude = #{site.longitude},latitude = #{site.latitude},name= #{site.name},parking_fee = #{site.parkingFee}
+        where station_id = #{site.stationId}
   </update>
 </mapper>

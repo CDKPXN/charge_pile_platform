@@ -12,6 +12,6 @@
   </resultMap>
   
   <insert id="addRate" parameterType="com.company.project.model.Rate">
-  		insert into tb_rate(e_id,rate,creat_time) values(#{eid},#{rate},#{creatTime})
+  		insert into tb_rate(e_id,rate,create_time) values(#{rate.eId},#{rate.rate},#{rate.createTime})
   </insert>
 </mapper>

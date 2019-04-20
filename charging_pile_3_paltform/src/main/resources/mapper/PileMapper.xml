@@ -28,8 +28,13 @@
     <result column="ctype" jdbcType="INTEGER" property="ctype" />
   </resultMap>
   
-  <insert id="addPile" parameterType="com.company.project.model.Pile">
-  		insert into tb_pile(sid,name,type,voltage,electricity,connect_id) 
-  		  values(#{sid},#{name},#{type},#{voltage},#{electricity},#{connect_id})
-  </insert>
+  
+  <select id="findByConnectorId" resultType="com.company.project.model.Pile">
+  		select * from tb_pile where connector_id = #{cid}
+  </select>
+  
+  <update id="updatePile" parameterType="com.company.project.model.Pile">
+  		update tb_pile set sid = #{pile.sid},type = #{pile.type},name = #{pile.name},voltage = #{pile.voltage},electricity = #{pile.electricity},ctype = #{pile.ctype}
+  		       where connector_id = #{pile.connectorId})
+  </update>
 </mapper>

@@ -10,6 +10,8 @@ import com.company.project.core.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 
@@ -27,37 +29,61 @@ public class SiteServiceImpl extends AbstractService<Site> implements SiteServic
 
 	@Override
 	public int addStation(JSONObject e) {
-         
-		Site site = new Site();
-		
-		String stationId = (String)e.get("StationId");
-		site.setStationId(stationId);
-		site.setAddr((String)e.get("Address"));
-		site.setLongitude((String)e.get("StationLng"));
-		site.setLatitude((String)e.get("StationLat"));
-		site.setName((String)e.get("StationName"));
-		if(e.get("ParFee").equals("免费")) {
-			site.setParkingFee(0);
+		String stationId = (String)e.get("StationID");
+		Site site2 = new Site();
+		site2.setStationId(stationId);
+		List<Site> select = tbSiteMapper.select(site2);
+		if(select.size() == 1) {
+			Site site = select.get(0);
+
+			site.setStationId(stationId);
+			site.setAddr((String)e.get("Address"));
+			site.setLongitude(e.get("StationLng").toString());
+			site.setLatitude(e.get("StationLat").toString());
+			site.setName((String)e.get("StationName"));
+			if(e.get("ParkFee").equals("免费")) {
+				site.setParkingFee(0);
+			}else {
+				site.setParkingFee((Integer)e.get("ParFee"));
+			}
+			site.setProvince("四川省");
+			site.setCity("成都市");
+			site.setDistrict("高新区");
+			String op = (String) e.get("OperatorID");
+			Admin admin = adminMapper.findByUsername(op);
+			site.setUid(admin.getId());
+			
+			tbSiteMapper.updateByPrimaryKeySelective(site);
+			
+			return site.getId();
 		}else {
-			site.setParkingFee((Integer)e.get("ParFee"));
+			Site site = new Site();
+
+			site.setStationId(stationId);
+			site.setAddr((String)e.get("Address"));
+			
+			site.setLongitude(e.get("StationLng").toString());
+			
+			site.setLatitude(e.get("StationLat").toString());
+			site.setName((String)e.get("StationName"));
+			if(e.get("ParkFee").equals("免费")) {
+				site.setParkingFee(0);
+			}else {
+				site.setParkingFee((Integer)e.get("ParFee"));
+			}
+			
+			site.setProvince("四川省");
+			site.setCity("成都市");
+			site.setDistrict("高新区");
+			
+			String op = (String) e.get("OperatorID");
+			Admin admin = adminMapper.findByUsername(op);
+			site.setUid(admin.getId());
+			
+			tbSiteMapper.insert(site);
+			
+			return site.getId();
 		}
-		
-		site.setProvince("四川省");
-		site.setCity("成都市");
-		site.setDistrict("高新区");
-		
-		String op = (String) e.get("OperatorID");
-		Admin admin = adminMapper.findByUsername(op);
-		site.setUid(admin.getId());
-		
-        Site temp = tbSiteMapper.fandByStationId(stationId);
-		
-		if(temp == null) {
-			tbSiteMapper.addStation(site);
-		}else {
-			tbSiteMapper.updateStationId(site);
-		}
-		return site.getId();
 		
 	}
 

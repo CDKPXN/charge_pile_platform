@@ -500,7 +500,7 @@ public class Pile {
 	}
 
 	public void setConnectorId(String equipmentId) {
-		this.connectorId = connectorId;
+		this.connectorId = equipmentId;
 	}
     
     
